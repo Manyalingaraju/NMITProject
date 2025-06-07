@@ -13,8 +13,13 @@ import OrderConfirmationPage from "./pages/OrderConfirmationPage";
 import MyOrderPage from "./pages/MyOrderPage";
 import AdminLayout from "./components/Admin/AdminLayout";
 import AdminHomePage from "./pages/AdminHomePage";
+<<<<<<< HEAD
 import UserManagement from "./components/Admin/UserManagement";
 import OrderManagement from "./components/Admin/OrderManagement";
+=======
+import ProductManagement from "./components/Admin/ProductManagement";
+import EditProductPage from "./components/Admin/EditProductPage";
+>>>>>>> ec94787 (added product management and editproduct page)
 
 const App = () => {
   return (
@@ -36,9 +41,14 @@ const App = () => {
         </Route>
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<AdminHomePage />} /> 
+<<<<<<< HEAD
           <Route path="users" element={<UserManagement />} />
           <Route path="orders" element={<OrderManagement />} />
 
+=======
+          <Route path="products" element={<ProductManagement />} />
+           <Route path="products/:id/Edit" element={<EditProductPage />} />
+>>>>>>> ec94787 (added product management and editproduct page)
         </Route>
       </Routes>
     </BrowserRouter>
