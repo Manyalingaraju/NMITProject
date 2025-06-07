@@ -14,36 +14,16 @@ const FilterSidebar = () => {
     type: '',
   });
 
-  // Updated categories for stationery and textbooks
   const categories = ['Stationery', 'Textbook'];
-  
-  // Colors (remains the same)
   const colors = ['Red', 'Blue', 'Black', 'Green', 'Gray', 'White', 'Pink', 'Beige', 'Navy'];
-  
-  // Sizes (updated for multiple selection with checkboxes)
   const sizes = ['Small', 'Medium', 'Large'];
-
-  // Updated materials relevant to stationery and textbooks
   const materials = [
-    'Notebook Paper',
-    'Parchment',
-    'Recycled Paper',
-    'Cardboard',
-    'Glossy Paper',
-    'Matte Paper',
-    'Leather',
-    'Plastic',
-    'Metal',
-    'Wood',
+    'Notebook Paper', 'Parchment', 'Recycled Paper', 'Cardboard', 'Glossy Paper',
+    'Matte Paper', 'Leather', 'Plastic', 'Metal', 'Wood',
   ];
-
-  // Brands (remains the same)
   const brands = ['Classmate', 'Archies', 'Camlin', 'Vidya', 'Cello'];
-
-  // Types (remains the same)
   const types = ['SingleSided', 'DoubleSided'];
 
-  // useEffect to sync the search params with filters state
   useEffect(() => {
     const params = Object.fromEntries([...searchParams]);
     setFilters({
@@ -58,7 +38,10 @@ const FilterSidebar = () => {
     });
   }, [searchParams]);
 
-  // Helper function to add or remove query params in the URL
+  useEffect(() => {
+    console.log('Active Filters:', filters);
+  }, [filters]);
+
   const updateSearchParams = (newParams) => {
     const updatedParams = new URLSearchParams(searchParams);
     Object.keys(newParams).forEach((key) => {
@@ -71,77 +54,51 @@ const FilterSidebar = () => {
     setSearchParams(updatedParams);
   };
 
-  // Handle change for category selection
   const handleCategoryChange = (category) => {
-    setFilters((prev) => ({
-      ...prev,
-      category,
-    }));
-    updateSearchParams({ ...searchParams, category });
+    setFilters((prev) => ({ ...prev, category }));
+    updateSearchParams({ ...filters, category });
   };
 
-  // Handle change for color selection
   const handleColorChange = (color) => {
-    setFilters((prev) => ({
-      ...prev,
-      color,
-    }));
-    updateSearchParams({ ...searchParams, color });
+    setFilters((prev) => ({ ...prev, color }));
+    updateSearchParams({ ...filters, color });
   };
 
-  // Handle size change (checkboxes for multiple selection)
   const handleSizeChange = (size) => {
     const newSize = filters.size.includes(size)
       ? filters.size.filter((s) => s !== size)
       : [...filters.size, size];
-    setFilters((prev) => ({
-      ...prev,
-      size: newSize,
-    }));
-    updateSearchParams({ ...searchParams, size: newSize.join(',') });
+    setFilters((prev) => ({ ...prev, size: newSize }));
+    updateSearchParams({ ...filters, size: newSize.join(',') });
   };
 
-  // Handle material change (checkboxes for multiple selection)
   const handleMaterialChange = (material) => {
     const newMaterial = filters.material.includes(material)
       ? filters.material.filter((m) => m !== material)
       : [...filters.material, material];
-    setFilters((prev) => ({
-      ...prev,
-      material: newMaterial,
-    }));
-    updateSearchParams({ ...searchParams, material: newMaterial.join(',') });
+    setFilters((prev) => ({ ...prev, material: newMaterial }));
+    updateSearchParams({ ...filters, material: newMaterial.join(',') });
   };
 
-  // Handle brand change (checkboxes for multiple selection)
   const handleBrandChange = (brand) => {
     const newBrand = filters.brand.includes(brand)
       ? filters.brand.filter((b) => b !== brand)
       : [...filters.brand, brand];
-    setFilters((prev) => ({
-      ...prev,
-      brand: newBrand,
-    }));
-    updateSearchParams({ ...searchParams, brand: newBrand.join(',') });
+    setFilters((prev) => ({ ...prev, brand: newBrand }));
+    updateSearchParams({ ...filters, brand: newBrand.join(',') });
   };
 
-  // Handle price range change
   const handlePriceChange = (e) => {
     const { name, value } = e.target;
-    setFilters((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-    updateSearchParams({ ...searchParams, [name]: value });
+    setFilters((prev) => ({ ...prev, [name]: value }));
+    updateSearchParams({ ...filters, [name]: value });
   };
 
-  
-
   return (
-    <div className="p-4">
+    <div className="p-4 h-screen overflow-y-auto">
       <h3 className="text-xl font-medium text-gray-800 mb-4">Filter</h3>
 
-      {/* Category Filter */}
+      {/* Category */}
       <div className="mb-6">
         <label className="block text-gray-600 font-medium mb-2">Category</label>
         {categories.map((category) => (
@@ -159,7 +116,7 @@ const FilterSidebar = () => {
         ))}
       </div>
 
-      {/* Color Filter */}
+      {/* Color */}
       <div className="mb-6">
         <label className="block text-gray-600 font-medium mb-2">Color</label>
         <div className="flex flex-wrap gap-2">
@@ -174,7 +131,7 @@ const FilterSidebar = () => {
         </div>
       </div>
 
-      {/* Size Filter (Checkboxes) */}
+      {/* Size */}
       <div className="mb-6">
         <label className="block text-gray-600 font-medium mb-2">Size</label>
         {sizes.map((size) => (
@@ -192,7 +149,7 @@ const FilterSidebar = () => {
         ))}
       </div>
 
-      {/* Material Filter (Checkboxes) */}
+      {/* Material */}
       <div className="mb-6">
         <label className="block text-gray-600 font-medium mb-2">Material</label>
         <div className="flex flex-wrap gap-2">
@@ -208,7 +165,7 @@ const FilterSidebar = () => {
         </div>
       </div>
 
-      {/* Brand Filter (Checkboxes) */}
+      {/* Brand */}
       <div className="mb-6">
         <label className="block text-gray-600 font-medium mb-2">Brand</label>
         <div className="flex flex-wrap gap-2">
@@ -224,7 +181,7 @@ const FilterSidebar = () => {
         </div>
       </div>
 
-      {/* Type Filter */}
+      {/* Type */}
       <div className="mb-6">
         <label className="block text-gray-600 font-medium mb-2">Type</label>
         {types.map((type) => (
@@ -242,21 +199,19 @@ const FilterSidebar = () => {
         ))}
       </div>
 
-      {/* Price Range Filter */}
+      {/* Price */}
       <div className="mb-6">
         <label className="block text-gray-600 font-medium mb-2">Price Range</label>
         <input
           type="range"
           min="0"
           max="100"
-          
-
           value={filters.maxPrice}
           name="maxPrice"
           onChange={handlePriceChange}
           className="w-full"
         />
-        <span>Price: ${filters.minPrice} - ${filters.maxPrice}</span>
+        <span>Price: ₹{filters.minPrice} - ₹{filters.maxPrice}</span>
       </div>
     </div>
   );

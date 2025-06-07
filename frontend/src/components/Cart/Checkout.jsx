@@ -192,4 +192,4 @@ const handlePaymentSuccess = (details) =>{
     );
 };
 
-export default CheckOut;
+export default CheckOut; 

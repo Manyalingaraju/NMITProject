@@ -6,8 +6,9 @@ import Home from "./pages/home";
 import Register from "./pages/Register";
 import Profile from './pages/Profile';
 import CollectionPage from "./pages/CollectionPage";
+import CheckOut from "./components/Cart/Checkout";
 import ProductDetails from "./components/Products/ProductDetails";
-import CheckOut from "./components/Cart/CheckOut";
+
 import OrderConfirmationPage from "./pages/OrderConfirmationPage";
 
 const App = () => {
