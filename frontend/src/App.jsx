@@ -8,8 +8,9 @@ import Profile from './pages/Profile';
 import CollectionPage from "./pages/CollectionPage";
 import CheckOut from "./components/Cart/Checkout";
 import ProductDetails from "./components/Products/ProductDetails";
-
+import OrderDetailsPage from "./pages/OrderDetailsPage";
 import OrderConfirmationPage from "./pages/OrderConfirmationPage";
+
 
 const App = () => {
   return (
@@ -28,7 +29,8 @@ const App = () => {
           <Route path="product/:id" element={<ProductDetails />} />
           <Route path="checkout" element={<CheckOut />} />
           <Route path="order-confirmation" element={<OrderConfirmationPage />} />
-
+         <Route path="/OrderDetailsPage" element={<OrderDetailsPage />} />
+          
         </Route>
         {/* Admin layout and routes can be added here */}
       </Routes>
