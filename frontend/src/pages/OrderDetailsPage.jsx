@@ -17,14 +17,14 @@ const OrderDetailsPage = () => {
       orderItems: [
         {
           productId: "1",
-          name: "Jacket",
+          name: "Notebook",
           price: 120,
           quantity: 1,
           image: "https://picsum.photos/150?random=1",
         },
         {
           productId: "2",
-          name: "Shirt",
+          name: "pen",
           price: 10,
           quantity: 2,
           image: "https://picsum.photos/150?random=2",

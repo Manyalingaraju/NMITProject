@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import UserLayout from "./components/Layout/UserLayout";
-import Login from "./pages/Login"; // Ensure Profile is imported
+import Login from "./pages/Login";
 import { Toaster } from "sonner";
 import Home from "./pages/home";
 import Register from "./pages/Register";
@@ -10,7 +10,9 @@ import CheckOut from "./components/Cart/Checkout";
 import ProductDetails from "./components/Products/ProductDetails";
 import OrderDetailsPage from "./pages/OrderDetailsPage";
 import OrderConfirmationPage from "./pages/OrderConfirmationPage";
-
+import MyOrderPage from "./pages/MyOrderPage";
+import AdminLayout from "./components/Admin/AdminLayout";
+import AdminHomePage from "./pages/AdminHomePage";
 
 const App = () => {
   return (
@@ -20,19 +22,19 @@ const App = () => {
       <Routes>
         <Route path="/" element={<UserLayout />}>
           <Route index element={<Home />} />
-          
-          <Route path="/login" element={<Login />} /> 
-          {/* Profile route */}
-          <Route path="/register" element={<Register />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="profile" element={<Profile />} />
           <Route path="collections/:collection" element={<CollectionPage />} />
           <Route path="product/:id" element={<ProductDetails />} />
           <Route path="checkout" element={<CheckOut />} />
           <Route path="order-confirmation" element={<OrderConfirmationPage />} />
-         <Route path="/OrderDetailsPage" element={<OrderDetailsPage />} />
-          
+          <Route path="order/:orderId" element={<OrderDetailsPage />} />
+          <Route path="my-orders" element={<MyOrderPage />} />
         </Route>
-        {/* Admin layout and routes can be added here */}
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminHomePage />} /> 
+        </Route>
       </Routes>
     </BrowserRouter>
   );
