@@ -72,7 +72,7 @@ const productSchema = new mongoose.Schema(
       type: String,
     },
     metaKeywords: {
-      type: String,
+      type: [String],
     },
     weight: {
       type: Number, // in grams

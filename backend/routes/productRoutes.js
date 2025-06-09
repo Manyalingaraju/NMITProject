@@ -57,6 +57,8 @@ router.post("/", protect, admin, async (req, res) => {
       metaKeywords,
       weight,
       dimensions,
+      rating,
+      numReviews
     } = req.body;
 
     const product = new Product({
@@ -80,6 +82,8 @@ router.post("/", protect, admin, async (req, res) => {
       metaKeywords,
       weight,
       dimensions,
+      rating,
+      numReviews,
       user: req.user._id,
     });
 
@@ -120,6 +124,8 @@ router.put("/:id", protect, admin, async (req, res) => {
       metaKeywords,
       weight,
       dimensions,
+      rating,
+      numReviews,
     } = req.body;
 
     // Find product by ID
@@ -147,6 +153,8 @@ router.put("/:id", protect, admin, async (req, res) => {
       product.metaKeywords = metaKeywords || product.metaKeywords;
       product.weight = weight || product.weight;
       product.dimensions = dimensions || product.dimensions;
+      product.rating = rating || product.rating;
+      product.numReviews = numReviews || product.numReviews;
 
       // Save updated product
       const updatedProduct = await product.save();
