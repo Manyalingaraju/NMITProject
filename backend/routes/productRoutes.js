@@ -5,15 +5,80 @@ const { protect, admin } = require("../middleware/authMiddleware");
 const router = express.Router();
 
 // @route   GET /api/products
-// @desc    Get all products
-// @access  Private/Admin
-router.get("/", protect, admin, async (req, res) => {
+// @desc    Get all products with optional filters
+// @access  Public
+router.get("/", async (req, res) => {
   try {
-    const products = await Product.find();
+    const {
+      category,
+      color,
+      size,
+      material,
+      brand,
+      type,
+      minPrice,
+      maxPrice,
+      sortBy,
+      limit,
+    } = req.query;
+
+    let query = {};
+    let sort = {};
+
+    // Filters
+    if (category && category.toLowerCase() !== "all") {
+      query.category = category;
+    }
+
+    if (material) {
+      query.material = { $in: material.split(",") };
+    }
+
+    if (brand) {
+      query.brand = { $in: brand.split(",") };
+    }
+
+    if (size) {
+      query.size = { $in: size.split(",") };
+    }
+
+    if (color) {
+      query.color = { $in: [color] };
+    }
+
+    if (minPrice || maxPrice) {
+      query.price = {};
+      if (minPrice) query.price.$gte = Number(minPrice);
+      if (maxPrice) query.price.$lte = Number(maxPrice);
+    }
+
+    if (type) {
+      query.type = { $in: [type] };
+    }
+
+    // Sort logic
+    if (sortBy) {
+      switch (sortBy) {
+        case "priceAsc":
+          sort = { price: 1 };
+          break;
+        case "priceDesc":
+          sort = { price: -1 };
+          break;
+        case "popularity":
+          sort = { rating: -1 };
+          break;
+        default:
+          break;
+      }
+    }
+
+    // Fetch products with filters
+    const products = await Product.find(query).sort(sort).limit(Number(limit) || 0);
     res.json(products);
   } catch (error) {
-    console.error("Error fetching products:", error);
-    res.status(500).send("Server error while fetching products");
+    console.error("Error filtering products:", error);
+    res.status(500).send("Server Error");
   }
 });
 
@@ -58,7 +123,7 @@ router.post("/", protect, admin, async (req, res) => {
       weight,
       dimensions,
       rating,
-      numReviews
+      numReviews,
     } = req.body;
 
     const product = new Product({
@@ -100,9 +165,6 @@ router.post("/", protect, admin, async (req, res) => {
 // @access  Private/Admin
 router.put("/:id", protect, admin, async (req, res) => {
   try {
-    // Log the request body for debugging
-    console.log("Update request body:", req.body);
-
     const {
       name,
       description,
@@ -128,11 +190,9 @@ router.put("/:id", protect, admin, async (req, res) => {
       numReviews,
     } = req.body;
 
-    // Find product by ID
     const product = await Product.findById(req.params.id);
 
     if (product) {
-      // Update each field only if it was passed in the body
       product.name = name || product.name;
       product.description = description || product.description;
       product.price = price || product.price;
@@ -145,8 +205,8 @@ router.put("/:id", protect, admin, async (req, res) => {
       product.patterns = patterns || product.patterns;
       product.material = material || product.material;
       product.images = images || product.images;
-      product.isFeatured = typeof isFeatured !== 'undefined' ? isFeatured : product.isFeatured;
-      product.isPublished = typeof isPublished !== 'undefined' ? isPublished : product.isPublished;
+      product.isFeatured = typeof isFeatured !== "undefined" ? isFeatured : product.isFeatured;
+      product.isPublished = typeof isPublished !== "undefined" ? isPublished : product.isPublished;
       product.tags = tags || product.tags;
       product.metaTitle = metaTitle || product.metaTitle;
       product.metaDescription = metaDescription || product.metaDescription;
@@ -156,7 +216,6 @@ router.put("/:id", protect, admin, async (req, res) => {
       product.rating = rating || product.rating;
       product.numReviews = numReviews || product.numReviews;
 
-      // Save updated product
       const updatedProduct = await product.save();
       res.json(updatedProduct);
     } else {
@@ -168,7 +227,6 @@ router.put("/:id", protect, admin, async (req, res) => {
   }
 });
 
-
 // @route   DELETE /api/products/:id
 // @desc    Delete a product
 // @access  Private/Admin
@@ -176,12 +234,11 @@ router.delete("/:id", protect, admin, async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
 
-    if (product){
-        await product.deleteOne();
-        res.json({message:"Product removed"})
-
+    if (product) {
+      await product.deleteOne();
+      res.json({ message: "Product removed" });
     } else {
-        res.status(404).json({message:"Product not found "})
+      res.status(404).json({ message: "Product not found" });
     }
   } catch (error) {
     console.error("Error deleting product:", error);
