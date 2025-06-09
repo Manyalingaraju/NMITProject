@@ -46,11 +46,15 @@ router.get("/", async (req, res) => {
       query.color = { $in: [color] };
     }
 
-    if (minPrice || maxPrice) {
-      query.price = {};
-      if (minPrice) query.price.$gte = Number(minPrice);
-      if (maxPrice) query.price.$lte = Number(maxPrice);
-    }
+    // ✅ Price exact match OR range
+if (req.query.price) {
+  query.price = Number(req.query.price);
+} else if (minPrice || maxPrice) {
+  query.price = {};
+  if (minPrice) query.price.$gte = Number(minPrice);
+  if (maxPrice) query.price.$lte = Number(maxPrice);
+}
+
 
     if (type) {
       query.type = { $in: [type] };
