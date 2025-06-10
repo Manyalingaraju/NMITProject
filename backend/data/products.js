@@ -1,879 +1,159 @@
-// product.js:
-
 const products = [
   {
-    "name": "Marker - Unruled 1",
-    "description": "A high-quality markers with unruled pages. Great for everyday use in school or office.",
-    "price": 12.52,
-    "originalPrice": 16.65,
-    "quantityInStock": 62,
-    "sku": "MA-UN-001",
-    "category": "Markers",
-    "brand": "PaperMate",
-    "pages": 82,
-    "patterns": [
-      "Unruled"
-    ],
-    "material": "Cardboard",
-    "images": [
-      {
-        "url": "https://picsum.photos/500/500?random=201",
-        "altText": "Markers Image 1"
-      }
-    ],
-    "isFeatured": true,
-    "isPublished": true,
-    "tags": [
-      "stationery",
-      "school",
-      "office",
-      "markers"
-    ],
-    "metaTitle": "Markers - Unruled by PaperMate",
-    "metaDescription": "Shop high-quality markers with unruled patterns by PaperMate. Ideal for school and office.",
-    "metaKeywords": [
-      "markers",
-      "unruled",
-      "papermate",
-      "stationery"
-    ],
-    "weight": 0.4,
-    "dimensions": {
-      "length": 20.5,
-      "width": 19.4,
-      "height": 1.6
-    },
-    "rating": 4.7,
-    "numReviews": 31
-  },
-  {
-    "name": "Marker - Ruled 2",
-    "description": "A high-quality markers with ruled pages. Great for everyday use in school or office.",
-    "price": 20.95,
-    "originalPrice": 23.9,
-    "quantityInStock": 76,
-    "sku": "MA-RU-002",
-    "category": "Markers",
-    "brand": "NoteCraft",
-    "pages": 186,
-    "patterns": [
-      "Ruled"
-    ],
-    "material": "Paper",
-    "images": [
-      {
-        "url": "https://picsum.photos/500/500?random=202",
-        "altText": "Markers Image 2"
-      }
-    ],
-    "isFeatured": false,
-    "isPublished": true,
-    "tags": [
-      "stationery",
-      "school",
-      "office",
-      "markers"
-    ],
-    "metaTitle": "Markers - Ruled by NoteCraft",
-    "metaDescription": "Shop high-quality markers with ruled patterns by NoteCraft. Ideal for school and office.",
-    "metaKeywords": [
-      "markers",
-      "ruled",
-      "notecraft",
-      "stationery"
-    ],
-    "weight": 0.79,
-    "dimensions": {
-      "length": 21.0,
-      "width": 15.6,
-      "height": 1.8
-    },
-    "rating": 4.2,
-    "numReviews": 10
-  },
-  {
-    "name": "Notebook - Unruled 3",
-    "description": "A high-quality notebooks with unruled pages. Great for everyday use in school or office.",
-    "price": 20.54,
-    "originalPrice": 23.99,
-    "quantityInStock": 23,
-    "sku": "NO-UN-003",
+    "name": "Notebooks - Unruled 50 Pages",
+    "description": "High-quality notebooks with unruled pattern and 50 pages. Perfect for everyday use.",
+    "price": 16.32,
+    "originalPrice": 21.19,
+    "quantityInStock": 185,
+    "sku": "NO-UN-000",
     "category": "Notebooks",
-    "brand": "WriteWell",
-    "pages": 52,
-    "patterns": [
-      "Unruled"
+    "brand": "ClassMate",
+    "pages": [
+      "50"
     ],
-    "material": "Leatherette",
-    "images": [
-      {
-        "url": "https://picsum.photos/500/500?random=203",
-        "altText": "Notebooks Image 3"
-      }
-    ],
-    "isFeatured": false,
-    "isPublished": true,
-    "tags": [
-      "stationery",
-      "school",
-      "office",
-      "notebooks"
-    ],
-    "metaTitle": "Notebooks - Unruled by WriteWell",
-    "metaDescription": "Shop high-quality notebooks with unruled patterns by WriteWell. Ideal for school and office.",
-    "metaKeywords": [
-      "notebooks",
-      "unruled",
-      "writewell",
-      "stationery"
-    ],
-    "weight": 0.47,
-    "dimensions": {
-      "length": 21.6,
-      "width": 19.2,
-      "height": 4.0
-    },
-    "rating": 4.3,
-    "numReviews": 43
-  },
-  {
-    "name": "Folder - Unruled 4",
-    "description": "A high-quality folders with unruled pages. Great for everyday use in school or office.",
-    "price": 14.78,
-    "originalPrice": 17.25,
-    "quantityInStock": 10,
-    "sku": "FO-UN-004",
-    "category": "Folders",
-    "brand": "NoteCraft",
-    "pages": 143,
-    "patterns": [
-      "Unruled"
-    ],
-    "material": "Leatherette",
-    "images": [
-      {
-        "url": "https://picsum.photos/500/500?random=204",
-        "altText": "Folders Image 4"
-      }
-    ],
-    "isFeatured": false,
-    "isPublished": true,
-    "tags": [
-      "stationery",
-      "school",
-      "office",
-      "folders"
-    ],
-    "metaTitle": "Folders - Unruled by NoteCraft",
-    "metaDescription": "Shop high-quality folders with unruled patterns by NoteCraft. Ideal for school and office.",
-    "metaKeywords": [
-      "folders",
-      "unruled",
-      "notecraft",
-      "stationery"
-    ],
-    "weight": 0.27,
-    "dimensions": {
-      "length": 24.9,
-      "width": 11.8,
-      "height": 3.3
-    },
-    "rating": 3.6,
-    "numReviews": 18
-  },
-  {
-    "name": "Marker - Dotted 5",
-    "description": "A high-quality markers with dotted pages. Great for everyday use in school or office.",
-    "price": 5.92,
-    "originalPrice": 7.4,
-    "quantityInStock": 61,
-    "sku": "MA-DO-005",
-    "category": "Markers",
-    "brand": "SmoothWrite",
-    "pages": 56,
-    "patterns": [
-      "Dotted"
-    ],
-    "material": "Paper",
-    "images": [
-      {
-        "url": "https://picsum.photos/500/500?random=205",
-        "altText": "Markers Image 5"
-      }
-    ],
-    "isFeatured": false,
-    "isPublished": true,
-    "tags": [
-      "stationery",
-      "school",
-      "office",
-      "markers"
-    ],
-    "metaTitle": "Markers - Dotted by SmoothWrite",
-    "metaDescription": "Shop high-quality markers with dotted patterns by SmoothWrite. Ideal for school and office.",
-    "metaKeywords": [
-      "markers",
-      "dotted",
-      "smoothwrite",
-      "stationery"
-    ],
-    "weight": 0.72,
-    "dimensions": {
-      "length": 22.7,
-      "width": 13.2,
-      "height": 3.2
-    },
-    "rating": 4.7,
-    "numReviews": 19
-  },
-  {
-    "name": "Pen - Unruled 6",
-    "description": "A high-quality pens with unruled pages. Great for everyday use in school or office.",
-    "price": 13.28,
-    "originalPrice": 14.87,
-    "quantityInStock": 69,
-    "sku": "PE-UN-006",
-    "category": "Pens",
-    "brand": "SmoothWrite",
-    "pages": 154,
-    "patterns": [
-      "Unruled"
-    ],
-    "material": "Leatherette",
-    "images": [
-      {
-        "url": "https://picsum.photos/500/500?random=206",
-        "altText": "Pens Image 6"
-      }
-    ],
-    "isFeatured": false,
-    "isPublished": true,
-    "tags": [
-      "stationery",
-      "school",
-      "office",
-      "pens"
-    ],
-    "metaTitle": "Pens - Unruled by SmoothWrite",
-    "metaDescription": "Shop high-quality pens with unruled patterns by SmoothWrite. Ideal for school and office.",
-    "metaKeywords": [
-      "pens",
-      "unruled",
-      "smoothwrite",
-      "stationery"
-    ],
-    "weight": 0.56,
-    "dimensions": {
-      "length": 15.8,
-      "width": 13.9,
-      "height": 4.7
-    },
-    "rating": 4.2,
-    "numReviews": 18
-  },
-  {
-    "name": "Notebook - Ruled 7",
-    "description": "A high-quality notebooks with ruled pages. Great for everyday use in school or office.",
-    "price": 18.1,
-    "originalPrice": 19.69,
-    "quantityInStock": 18,
-    "sku": "NO-RU-007",
-    "category": "Notebooks",
-    "brand": "OfficeEssentials",
-    "pages": 115,
-    "patterns": [
-      "Ruled"
-    ],
-    "material": "Leatherette",
-    "images": [
-      {
-        "url": "https://picsum.photos/500/500?random=207",
-        "altText": "Notebooks Image 7"
-      }
-    ],
-    "isFeatured": true,
-    "isPublished": true,
-    "tags": [
-      "stationery",
-      "school",
-      "office",
-      "notebooks"
-    ],
-    "metaTitle": "Notebooks - Ruled by OfficeEssentials",
-    "metaDescription": "Shop high-quality notebooks with ruled patterns by OfficeEssentials. Ideal for school and office.",
-    "metaKeywords": [
-      "notebooks",
-      "ruled",
-      "officeessentials",
-      "stationery"
-    ],
-    "weight": 0.98,
-    "dimensions": {
-      "length": 21.4,
-      "width": 19.2,
-      "height": 3.5
-    },
-    "rating": 4.1,
-    "numReviews": 33
-  },
-  {
-    "name": "Pen - Dotted 8",
-    "description": "A high-quality pens with dotted pages. Great for everyday use in school or office.",
-    "price": 7.31,
-    "originalPrice": 9.32,
-    "quantityInStock": 22,
-    "sku": "PE-DO-008",
-    "category": "Pens",
-    "brand": "PaperMate",
-    "pages": 54,
-    "patterns": [
-      "Dotted"
-    ],
-    "material": "Cardboard",
-    "images": [
-      {
-        "url": "https://picsum.photos/500/500?random=208",
-        "altText": "Pens Image 8"
-      }
-    ],
-    "isFeatured": true,
-    "isPublished": true,
-    "tags": [
-      "stationery",
-      "school",
-      "office",
-      "pens"
-    ],
-    "metaTitle": "Pens - Dotted by PaperMate",
-    "metaDescription": "Shop high-quality pens with dotted patterns by PaperMate. Ideal for school and office.",
-    "metaKeywords": [
-      "pens",
-      "dotted",
-      "papermate",
-      "stationery"
-    ],
-    "weight": 0.22,
-    "dimensions": {
-      "length": 20.6,
-      "width": 13.5,
-      "height": 1.3
-    },
-    "rating": 4.5,
-    "numReviews": 6
-  },
-  {
-    "name": "Notebook - Ruled 9",
-    "description": "A high-quality notebooks with ruled pages. Great for everyday use in school or office.",
-    "price": 11.46,
-    "originalPrice": 15.57,
-    "quantityInStock": 54,
-    "sku": "NO-RU-009",
-    "category": "Notebooks",
-    "brand": "OfficeEssentials",
-    "pages": 210,
-    "patterns": [
-      "Ruled"
-    ],
-    "material": "Cardboard",
-    "images": [
-      {
-        "url": "https://picsum.photos/500/500?random=209",
-        "altText": "Notebooks Image 9"
-      }
-    ],
-    "isFeatured": true,
-    "isPublished": true,
-    "tags": [
-      "stationery",
-      "school",
-      "office",
-      "notebooks"
-    ],
-    "metaTitle": "Notebooks - Ruled by OfficeEssentials",
-    "metaDescription": "Shop high-quality notebooks with ruled patterns by OfficeEssentials. Ideal for school and office.",
-    "metaKeywords": [
-      "notebooks",
-      "ruled",
-      "officeessentials",
-      "stationery"
-    ],
-    "weight": 0.35,
-    "dimensions": {
-      "length": 20.3,
-      "width": 19.8,
-      "height": 4.8
-    },
-    "rating": 4.6,
-    "numReviews": 33
-  },
-  {
-    "name": "Sticky Note - Dotted 10",
-    "description": "A high-quality sticky notes with dotted pages. Great for everyday use in school or office.",
-    "price": 12.59,
-    "originalPrice": 16.25,
-    "quantityInStock": 68,
-    "sku": "ST-DO-010",
-    "category": "Sticky Notes",
-    "brand": "NoteCraft",
-    "pages": 209,
-    "patterns": [
-      "Dotted"
-    ],
-    "material": "Paper",
-    "images": [
-      {
-        "url": "https://picsum.photos/500/500?random=210",
-        "altText": "Sticky Notes Image 10"
-      }
-    ],
-    "isFeatured": false,
-    "isPublished": true,
-    "tags": [
-      "stationery",
-      "school",
-      "office",
-      "sticky notes"
-    ],
-    "metaTitle": "Sticky Notes - Dotted by NoteCraft",
-    "metaDescription": "Shop high-quality sticky notes with dotted patterns by NoteCraft. Ideal for school and office.",
-    "metaKeywords": [
-      "sticky notes",
-      "dotted",
-      "notecraft",
-      "stationery"
-    ],
-    "weight": 0.65,
-    "dimensions": {
-      "length": 21.3,
-      "width": 11.3,
-      "height": 1.8
-    },
-    "rating": 4.4,
-    "numReviews": 33
-  },
-  {
-    "name": "Folder - Grid 11",
-    "description": "A high-quality folders with grid pages. Great for everyday use in school or office.",
-    "price": 16.41,
-    "originalPrice": 19.38,
-    "quantityInStock": 81,
-    "sku": "FO-GR-011",
-    "category": "Folders",
-    "brand": "NoteCraft",
-    "pages": 214,
-    "patterns": [
-      "Grid"
-    ],
-    "material": "Leatherette",
-    "images": [
-      {
-        "url": "https://picsum.photos/500/500?random=211",
-        "altText": "Folders Image 11"
-      }
-    ],
-    "isFeatured": false,
-    "isPublished": true,
-    "tags": [
-      "stationery",
-      "school",
-      "office",
-      "folders"
-    ],
-    "metaTitle": "Folders - Grid by NoteCraft",
-    "metaDescription": "Shop high-quality folders with grid patterns by NoteCraft. Ideal for school and office.",
-    "metaKeywords": [
-      "folders",
-      "grid",
-      "notecraft",
-      "stationery"
-    ],
-    "weight": 0.28,
-    "dimensions": {
-      "length": 17.4,
-      "width": 17.1,
-      "height": 2.5
-    },
-    "rating": 3.8,
-    "numReviews": 8
-  },
-  {
-    "name": "Folder - Ruled 12",
-    "description": "A high-quality folders with ruled pages. Great for everyday use in school or office.",
-    "price": 5.69,
-    "originalPrice": 7.99,
-    "quantityInStock": 76,
-    "sku": "FO-RU-012",
-    "category": "Folders",
-    "brand": "WriteWell",
-    "pages": 215,
-    "patterns": [
-      "Ruled"
-    ],
-    "material": "Plastic",
-    "images": [
-      {
-        "url": "https://picsum.photos/500/500?random=212",
-        "altText": "Folders Image 12"
-      }
-    ],
-    "isFeatured": true,
-    "isPublished": true,
-    "tags": [
-      "stationery",
-      "school",
-      "office",
-      "folders"
-    ],
-    "metaTitle": "Folders - Ruled by WriteWell",
-    "metaDescription": "Shop high-quality folders with ruled patterns by WriteWell. Ideal for school and office.",
-    "metaKeywords": [
-      "folders",
-      "ruled",
-      "writewell",
-      "stationery"
-    ],
-    "weight": 0.94,
-    "dimensions": {
-      "length": 18.0,
-      "width": 11.2,
-      "height": 3.7
-    },
-    "rating": 4.6,
-    "numReviews": 9
-  },
-  {
-    "name": "Folder - Unruled 13",
-    "description": "A high-quality folders with unruled pages. Great for everyday use in school or office.",
-    "price": 8.96,
-    "originalPrice": 12.22,
-    "quantityInStock": 88,
-    "sku": "FO-UN-013",
-    "category": "Folders",
-    "brand": "SmoothWrite",
-    "pages": 133,
     "patterns": [
       "Unruled"
     ],
     "material": "Plastic",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=213",
-        "altText": "Folders Image 13"
+        "url": "https://picsum.photos/500/500?random=100",
+        "altText": "Notebooks Image"
       }
     ],
     "isFeatured": false,
     "isPublished": true,
     "tags": [
-      "stationery",
       "school",
-      "office",
-      "folders"
-    ],
-    "metaTitle": "Folders - Unruled by SmoothWrite",
-    "metaDescription": "Shop high-quality folders with unruled patterns by SmoothWrite. Ideal for school and office.",
-    "metaKeywords": [
-      "folders",
-      "unruled",
-      "smoothwrite",
-      "stationery"
-    ],
-    "weight": 0.73,
-    "dimensions": {
-      "length": 18.5,
-      "width": 13.5,
-      "height": 1.2
-    },
-    "rating": 4.1,
-    "numReviews": 5
-  },
-  {
-    "name": "Pen - Unruled 14",
-    "description": "A high-quality pens with unruled pages. Great for everyday use in school or office.",
-    "price": 17.13,
-    "originalPrice": 22.0,
-    "quantityInStock": 18,
-    "sku": "PE-UN-014",
-    "category": "Pens",
-    "brand": "WriteWell",
-    "pages": 54,
-    "patterns": [
-      "Unruled"
-    ],
-    "material": "Leatherette",
-    "images": [
-      {
-        "url": "https://picsum.photos/500/500?random=214",
-        "altText": "Pens Image 14"
-      }
-    ],
-    "isFeatured": false,
-    "isPublished": true,
-    "tags": [
       "stationery",
-      "school",
-      "office",
-      "pens"
+      "notes"
     ],
-    "metaTitle": "Pens - Unruled by WriteWell",
-    "metaDescription": "Shop high-quality pens with unruled patterns by WriteWell. Ideal for school and office.",
+    "metaTitle": "Notebooks - Unruled by ClassMate",
+    "metaDescription": "Shop high-quality notebooks with unruled pattern by ClassMate.",
     "metaKeywords": [
-      "pens",
-      "unruled",
-      "writewell",
-      "stationery"
-    ],
-    "weight": 0.7,
-    "dimensions": {
-      "length": 23.7,
-      "width": 11.5,
-      "height": 3.3
-    },
-    "rating": 4.9,
-    "numReviews": 39
-  },
-  {
-    "name": "Sticky Note - Grid 15",
-    "description": "A high-quality sticky notes with grid pages. Great for everyday use in school or office.",
-    "price": 23.18,
-    "originalPrice": 27.9,
-    "quantityInStock": 86,
-    "sku": "ST-GR-015",
-    "category": "Sticky Notes",
-    "brand": "PaperMate",
-    "pages": 150,
-    "patterns": [
-      "Grid"
-    ],
-    "material": "Paper",
-    "images": [
-      {
-        "url": "https://picsum.photos/500/500?random=215",
-        "altText": "Sticky Notes Image 15"
-      }
-    ],
-    "isFeatured": false,
-    "isPublished": true,
-    "tags": [
+      "school",
       "stationery",
-      "school",
-      "office",
-      "sticky notes"
-    ],
-    "metaTitle": "Sticky Notes - Grid by PaperMate",
-    "metaDescription": "Shop high-quality sticky notes with grid patterns by PaperMate. Ideal for school and office.",
-    "metaKeywords": [
-      "sticky notes",
-      "grid",
-      "papermate",
-      "stationery"
-    ],
-    "weight": 0.71,
-    "dimensions": {
-      "length": 22.8,
-      "width": 11.4,
-      "height": 4.6
-    },
-    "rating": 4.2,
-    "numReviews": 20
-  },
-  {
-    "name": "Pen - Ruled 16",
-    "description": "A high-quality pens with ruled pages. Great for everyday use in school or office.",
-    "price": 20.53,
-    "originalPrice": 21.63,
-    "quantityInStock": 77,
-    "sku": "PE-RU-016",
-    "category": "Pens",
-    "brand": "WriteWell",
-    "pages": 223,
-    "patterns": [
-      "Ruled"
-    ],
-    "material": "Plastic",
-    "images": [
-      {
-        "url": "https://picsum.photos/500/500?random=216",
-        "altText": "Pens Image 16"
-      }
-    ],
-    "isFeatured": false,
-    "isPublished": true,
-    "tags": [
-      "stationery",
-      "school",
-      "office",
-      "pens"
-    ],
-    "metaTitle": "Pens - Ruled by WriteWell",
-    "metaDescription": "Shop high-quality pens with ruled patterns by WriteWell. Ideal for school and office.",
-    "metaKeywords": [
-      "pens",
-      "ruled",
-      "writewell",
-      "stationery"
-    ],
-    "weight": 0.82,
-    "dimensions": {
-      "length": 20.8,
-      "width": 16.2,
-      "height": 3.6
-    },
-    "rating": 4.6,
-    "numReviews": 26
-  },
-  {
-    "name": "Pen - Dotted 17",
-    "description": "A high-quality pens with dotted pages. Great for everyday use in school or office.",
-    "price": 14.41,
-    "originalPrice": 16.47,
-    "quantityInStock": 40,
-    "sku": "PE-DO-017",
-    "category": "Pens",
-    "brand": "NoteCraft",
-    "pages": 201,
-    "patterns": [
-      "Dotted"
-    ],
-    "material": "Leatherette",
-    "images": [
-      {
-        "url": "https://picsum.photos/500/500?random=217",
-        "altText": "Pens Image 17"
-      }
-    ],
-    "isFeatured": false,
-    "isPublished": true,
-    "tags": [
-      "stationery",
-      "school",
-      "office",
-      "pens"
-    ],
-    "metaTitle": "Pens - Dotted by NoteCraft",
-    "metaDescription": "Shop high-quality pens with dotted patterns by NoteCraft. Ideal for school and office.",
-    "metaKeywords": [
-      "pens",
-      "dotted",
-      "notecraft",
-      "stationery"
-    ],
-    "weight": 0.55,
-    "dimensions": {
-      "length": 21.6,
-      "width": 13.1,
-      "height": 2.6
-    },
-    "rating": 5.0,
-    "numReviews": 40
-  },
-  {
-    "name": "Marker - Ruled 18",
-    "description": "A high-quality markers with ruled pages. Great for everyday use in school or office.",
-    "price": 16.25,
-    "originalPrice": 17.41,
-    "quantityInStock": 32,
-    "sku": "MA-RU-018",
-    "category": "Markers",
-    "brand": "OfficeEssentials",
-    "pages": 117,
-    "patterns": [
-      "Ruled"
-    ],
-    "material": "Cardboard",
-    "images": [
-      {
-        "url": "https://picsum.photos/500/500?random=218",
-        "altText": "Markers Image 18"
-      }
-    ],
-    "isFeatured": true,
-    "isPublished": true,
-    "tags": [
-      "stationery",
-      "school",
-      "office",
-      "markers"
-    ],
-    "metaTitle": "Markers - Ruled by OfficeEssentials",
-    "metaDescription": "Shop high-quality markers with ruled patterns by OfficeEssentials. Ideal for school and office.",
-    "metaKeywords": [
-      "markers",
-      "ruled",
-      "officeessentials",
-      "stationery"
+      "notes"
     ],
     "weight": 0.78,
     "dimensions": {
-      "length": 15.3,
-      "width": 10.4,
-      "height": 1.8
+      "length": 24.4,
+      "width": 15.2,
+      "height": 1.1
     },
-    "rating": 4.1,
-    "numReviews": 12
+    "rating": 3.4,
+    "numReviews": 33
   },
   {
-    "name": "Notebook - Unruled 19",
-    "description": "A high-quality notebooks with unruled pages. Great for everyday use in school or office.",
-    "price": 8.94,
-    "originalPrice": 12.95,
-    "quantityInStock": 77,
-    "sku": "NO-UN-019",
-    "category": "Notebooks",
-    "brand": "OfficeEssentials",
-    "pages": 56,
+    "name": "Sticky Notes - Unruled 150 Pages",
+    "description": "High-quality sticky notes with unruled pattern and 150 pages. Perfect for everyday use.",
+    "price": 7.38,
+    "originalPrice": 10.66,
+    "quantityInStock": 191,
+    "sku": "ST-UN-001",
+    "category": "Sticky Notes",
+    "brand": "PaperMate",
+    "pages": [
+      "150"
+    ],
     "patterns": [
       "Unruled"
     ],
-    "material": "Cardboard",
+    "material": "Hardcover",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=219",
-        "altText": "Notebooks Image 19"
+        "url": "https://picsum.photos/500/500?random=101",
+        "altText": "Sticky Notes Image"
       }
     ],
-    "isFeatured": false,
+    "isFeatured": true,
     "isPublished": true,
     "tags": [
-      "stationery",
       "school",
-      "office",
-      "notebooks"
+      "writing",
+      "office"
     ],
-    "metaTitle": "Notebooks - Unruled by OfficeEssentials",
-    "metaDescription": "Shop high-quality notebooks with unruled patterns by OfficeEssentials. Ideal for school and office.",
+    "metaTitle": "Sticky Notes - Unruled by PaperMate",
+    "metaDescription": "Shop high-quality sticky notes with unruled pattern by PaperMate.",
     "metaKeywords": [
-      "notebooks",
-      "unruled",
-      "officeessentials",
-      "stationery"
+      "school",
+      "writing",
+      "office"
     ],
-    "weight": 0.57,
+    "weight": 0.94,
     "dimensions": {
-      "length": 24.4,
-      "width": 15.8,
-      "height": 4.5
+      "length": 24.1,
+      "width": 17.0,
+      "height": 1.8
     },
     "rating": 4.2,
-    "numReviews": 31
+    "numReviews": 30
   },
   {
-    "name": "Marker - Grid 20",
-    "description": "A high-quality markers with grid pages. Great for everyday use in school or office.",
-    "price": 7.44,
-    "originalPrice": 11.9,
-    "quantityInStock": 31,
-    "sku": "MA-GR-020",
-    "category": "Markers",
-    "brand": "SmoothWrite",
-    "pages": 222,
+    "name": "Notebooks - Grid 200 Pages",
+    "description": "High-quality notebooks with grid pattern and 200 pages. Perfect for everyday use.",
+    "price": 18.52,
+    "originalPrice": 23.7,
+    "quantityInStock": 189,
+    "sku": "NO-GR-002",
+    "category": "Notebooks",
+    "brand": "NoteCraft",
+    "pages": [
+      "200"
+    ],
     "patterns": [
       "Grid"
     ],
-    "material": "Cardboard",
+    "material": "Paper",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=220",
-        "altText": "Markers Image 20"
+        "url": "https://picsum.photos/500/500?random=102",
+        "altText": "Notebooks Image"
+      }
+    ],
+    "isFeatured": true,
+    "isPublished": true,
+    "tags": [
+      "writing",
+      "stationery",
+      "school"
+    ],
+    "metaTitle": "Notebooks - Grid by NoteCraft",
+    "metaDescription": "Shop high-quality notebooks with grid pattern by NoteCraft.",
+    "metaKeywords": [
+      "writing",
+      "stationery",
+      "school"
+    ],
+    "weight": 1.45,
+    "dimensions": {
+      "length": 18.0,
+      "width": 15.3,
+      "height": 1.3
+    },
+    "rating": 5.0,
+    "numReviews": 38
+  },
+  {
+    "name": "Notebooks - Grid 150 Pages",
+    "description": "High-quality notebooks with grid pattern and 150 pages. Perfect for everyday use.",
+    "price": 19.5,
+    "originalPrice": 24.02,
+    "quantityInStock": 149,
+    "sku": "NO-GR-003",
+    "category": "Notebooks",
+    "brand": "PaperMate",
+    "pages": [
+      "150"
+    ],
+    "patterns": [
+      "Grid"
+    ],
+    "material": "Softcover",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=103",
+        "altText": "Notebooks Image"
       }
     ],
     "isFeatured": true,
@@ -881,250 +161,968 @@ const products = [
     "tags": [
       "stationery",
       "school",
-      "office",
-      "markers"
+      "office"
     ],
-    "metaTitle": "Markers - Grid by SmoothWrite",
-    "metaDescription": "Shop high-quality markers with grid patterns by SmoothWrite. Ideal for school and office.",
+    "metaTitle": "Notebooks - Grid by PaperMate",
+    "metaDescription": "Shop high-quality notebooks with grid pattern by PaperMate.",
     "metaKeywords": [
-      "markers",
-      "grid",
-      "smoothwrite",
-      "stationery"
+      "stationery",
+      "school",
+      "office"
     ],
-    "weight": 0.36,
+    "weight": 0.32,
     "dimensions": {
-      "length": 17.8,
-      "width": 14.4,
-      "height": 4.3
+      "length": 12.8,
+      "width": 13.9,
+      "height": 1.1
     },
-    "rating": 4.2,
-    "numReviews": 42
+    "rating": 4.0,
+    "numReviews": 19
   },
   {
-    "name": "Folder - Ruled 21",
-    "description": "A high-quality folders with ruled pages. Great for everyday use in school or office.",
-    "price": 10.41,
-    "originalPrice": 11.99,
-    "quantityInStock": 89,
-    "sku": "FO-RU-021",
-    "category": "Folders",
-    "brand": "WriteWell",
-    "pages": 109,
+    "name": "Highlighters - Dotted 100 Pages",
+    "description": "High-quality highlighters with dotted pattern and 100 pages. Perfect for everyday use.",
+    "price": 19.6,
+    "originalPrice": 24.16,
+    "quantityInStock": 115,
+    "sku": "HI-DO-004",
+    "category": "Highlighters",
+    "brand": "ClassMate",
+    "pages": [
+      "100"
+    ],
+    "patterns": [
+      "Dotted"
+    ],
+    "material": "Softcover",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=104",
+        "altText": "Highlighters Image"
+      }
+    ],
+    "isFeatured": true,
+    "isPublished": true,
+    "tags": [
+      "notes",
+      "stationery",
+      "writing"
+    ],
+    "metaTitle": "Highlighters - Dotted by ClassMate",
+    "metaDescription": "Shop high-quality highlighters with dotted pattern by ClassMate.",
+    "metaKeywords": [
+      "notes",
+      "stationery",
+      "writing"
+    ],
+    "weight": 0.84,
+    "dimensions": {
+      "length": 23.0,
+      "width": 11.6,
+      "height": 1.5
+    },
+    "rating": 4.9,
+    "numReviews": 1
+  },
+  {
+    "name": "Markers - Ruled 80 Pages",
+    "description": "High-quality markers with ruled pattern and 80 pages. Perfect for everyday use.",
+    "price": 16.28,
+    "originalPrice": 22.04,
+    "quantityInStock": 161,
+    "sku": "MA-RU-005",
+    "category": "Markers",
+    "brand": "NoteCraft",
+    "pages": [
+      "80"
+    ],
+    "patterns": [
+      "Ruled"
+    ],
+    "material": "Cardboard",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=105",
+        "altText": "Markers Image"
+      }
+    ],
+    "isFeatured": true,
+    "isPublished": true,
+    "tags": [
+      "school",
+      "stationery",
+      "office"
+    ],
+    "metaTitle": "Markers - Ruled by NoteCraft",
+    "metaDescription": "Shop high-quality markers with ruled pattern by NoteCraft.",
+    "metaKeywords": [
+      "school",
+      "stationery",
+      "office"
+    ],
+    "weight": 1.48,
+    "dimensions": {
+      "length": 14.5,
+      "width": 19.7,
+      "height": 1.5
+    },
+    "rating": 3.8,
+    "numReviews": 45
+  },
+  {
+    "name": "Markers - Ruled 200 Pages",
+    "description": "High-quality markers with ruled pattern and 200 pages. Perfect for everyday use.",
+    "price": 14.7,
+    "originalPrice": 20.69,
+    "quantityInStock": 191,
+    "sku": "MA-RU-006",
+    "category": "Markers",
+    "brand": "PaperMate",
+    "pages": [
+      "200"
+    ],
+    "patterns": [
+      "Ruled"
+    ],
+    "material": "Paper",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=106",
+        "altText": "Markers Image"
+      }
+    ],
+    "isFeatured": false,
+    "isPublished": true,
+    "tags": [
+      "office",
+      "notes",
+      "writing"
+    ],
+    "metaTitle": "Markers - Ruled by PaperMate",
+    "metaDescription": "Shop high-quality markers with ruled pattern by PaperMate.",
+    "metaKeywords": [
+      "office",
+      "notes",
+      "writing"
+    ],
+    "weight": 0.73,
+    "dimensions": {
+      "length": 18.4,
+      "width": 19.5,
+      "height": 2.4
+    },
+    "rating": 4.9,
+    "numReviews": 19
+  },
+  {
+    "name": "Notebooks - Ruled 150 Pages",
+    "description": "High-quality notebooks with ruled pattern and 150 pages. Perfect for everyday use.",
+    "price": 7.61,
+    "originalPrice": 12.22,
+    "quantityInStock": 187,
+    "sku": "NO-RU-007",
+    "category": "Notebooks",
+    "brand": "BrightMark",
+    "pages": [
+      "150"
+    ],
+    "patterns": [
+      "Ruled"
+    ],
+    "material": "Hardcover",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=107",
+        "altText": "Notebooks Image"
+      }
+    ],
+    "isFeatured": true,
+    "isPublished": true,
+    "tags": [
+      "writing",
+      "office",
+      "school"
+    ],
+    "metaTitle": "Notebooks - Ruled by BrightMark",
+    "metaDescription": "Shop high-quality notebooks with ruled pattern by BrightMark.",
+    "metaKeywords": [
+      "writing",
+      "office",
+      "school"
+    ],
+    "weight": 1.17,
+    "dimensions": {
+      "length": 17.3,
+      "width": 14.9,
+      "height": 1.3
+    },
+    "rating": 3.9,
+    "numReviews": 25
+  },
+  {
+    "name": "Markers - Grid 50 Pages",
+    "description": "High-quality markers with grid pattern and 50 pages. Perfect for everyday use.",
+    "price": 11.6,
+    "originalPrice": 14.92,
+    "quantityInStock": 153,
+    "sku": "MA-GR-008",
+    "category": "Markers",
+    "brand": "PaperMate",
+    "pages": [
+      "50"
+    ],
+    "patterns": [
+      "Grid"
+    ],
+    "material": "Hardcover",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=108",
+        "altText": "Markers Image"
+      }
+    ],
+    "isFeatured": true,
+    "isPublished": true,
+    "tags": [
+      "school",
+      "notes",
+      "writing"
+    ],
+    "metaTitle": "Markers - Grid by PaperMate",
+    "metaDescription": "Shop high-quality markers with grid pattern by PaperMate.",
+    "metaKeywords": [
+      "school",
+      "notes",
+      "writing"
+    ],
+    "weight": 0.72,
+    "dimensions": {
+      "length": 24.9,
+      "width": 15.4,
+      "height": 2.4
+    },
+    "rating": 3.7,
+    "numReviews": 7
+  },
+  {
+    "name": "Pens - Dotted 50 Pages",
+    "description": "High-quality pens with dotted pattern and 50 pages. Perfect for everyday use.",
+    "price": 13.66,
+    "originalPrice": 16.61,
+    "quantityInStock": 160,
+    "sku": "PE-DO-009",
+    "category": "Pens",
+    "brand": "ClassMate",
+    "pages": [
+      "50"
+    ],
+    "patterns": [
+      "Dotted"
+    ],
+    "material": "Plastic",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=109",
+        "altText": "Pens Image"
+      }
+    ],
+    "isFeatured": true,
+    "isPublished": true,
+    "tags": [
+      "stationery",
+      "writing",
+      "school"
+    ],
+    "metaTitle": "Pens - Dotted by ClassMate",
+    "metaDescription": "Shop high-quality pens with dotted pattern by ClassMate.",
+    "metaKeywords": [
+      "stationery",
+      "writing",
+      "school"
+    ],
+    "weight": 0.34,
+    "dimensions": {
+      "length": 21.0,
+      "width": 18.1,
+      "height": 2.5
+    },
+    "rating": 4.9,
+    "numReviews": 2
+  },
+  {
+    "name": "Pens - Ruled 200 Pages",
+    "description": "High-quality pens with ruled pattern and 200 pages. Perfect for everyday use.",
+    "price": 19.95,
+    "originalPrice": 23.64,
+    "quantityInStock": 159,
+    "sku": "PE-RU-010",
+    "category": "Pens",
+    "brand": "InkJoy",
+    "pages": [
+      "200"
+    ],
+    "patterns": [
+      "Ruled"
+    ],
+    "material": "Softcover",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=110",
+        "altText": "Pens Image"
+      }
+    ],
+    "isFeatured": true,
+    "isPublished": true,
+    "tags": [
+      "notes",
+      "school",
+      "stationery"
+    ],
+    "metaTitle": "Pens - Ruled by InkJoy",
+    "metaDescription": "Shop high-quality pens with ruled pattern by InkJoy.",
+    "metaKeywords": [
+      "notes",
+      "school",
+      "stationery"
+    ],
+    "weight": 1.28,
+    "dimensions": {
+      "length": 15.6,
+      "width": 14.3,
+      "height": 1.3
+    },
+    "rating": 4.5,
+    "numReviews": 49
+  },
+  {
+    "name": "Highlighters - Grid 80 Pages",
+    "description": "High-quality highlighters with grid pattern and 80 pages. Perfect for everyday use.",
+    "price": 14.26,
+    "originalPrice": 16.34,
+    "quantityInStock": 96,
+    "sku": "HI-GR-011",
+    "category": "Highlighters",
+    "brand": "ClassMate",
+    "pages": [
+      "80"
+    ],
+    "patterns": [
+      "Grid"
+    ],
+    "material": "Paper",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=111",
+        "altText": "Highlighters Image"
+      }
+    ],
+    "isFeatured": false,
+    "isPublished": true,
+    "tags": [
+      "office",
+      "notes",
+      "school"
+    ],
+    "metaTitle": "Highlighters - Grid by ClassMate",
+    "metaDescription": "Shop high-quality highlighters with grid pattern by ClassMate.",
+    "metaKeywords": [
+      "office",
+      "notes",
+      "school"
+    ],
+    "weight": 1.15,
+    "dimensions": {
+      "length": 21.9,
+      "width": 11.7,
+      "height": 2.8
+    },
+    "rating": 4.0,
+    "numReviews": 25
+  },
+  {
+    "name": "Markers - Dotted 150 Pages",
+    "description": "High-quality markers with dotted pattern and 150 pages. Perfect for everyday use.",
+    "price": 15.75,
+    "originalPrice": 21.25,
+    "quantityInStock": 123,
+    "sku": "MA-DO-012",
+    "category": "Markers",
+    "brand": "PaperMate",
+    "pages": [
+      "150"
+    ],
+    "patterns": [
+      "Dotted"
+    ],
+    "material": "Cardboard",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=112",
+        "altText": "Markers Image"
+      }
+    ],
+    "isFeatured": true,
+    "isPublished": true,
+    "tags": [
+      "school",
+      "office",
+      "stationery"
+    ],
+    "metaTitle": "Markers - Dotted by PaperMate",
+    "metaDescription": "Shop high-quality markers with dotted pattern by PaperMate.",
+    "metaKeywords": [
+      "school",
+      "office",
+      "stationery"
+    ],
+    "weight": 1.04,
+    "dimensions": {
+      "length": 23.9,
+      "width": 18.2,
+      "height": 2.3
+    },
+    "rating": 3.6,
+    "numReviews": 8
+  },
+  {
+    "name": "Pens - Unruled 80 Pages",
+    "description": "High-quality pens with unruled pattern and 80 pages. Perfect for everyday use.",
+    "price": 18.93,
+    "originalPrice": 24.7,
+    "quantityInStock": 99,
+    "sku": "PE-UN-013",
+    "category": "Pens",
+    "brand": "PaperMate",
+    "pages": [
+      "80"
+    ],
+    "patterns": [
+      "Unruled"
+    ],
+    "material": "Plastic",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=113",
+        "altText": "Pens Image"
+      }
+    ],
+    "isFeatured": false,
+    "isPublished": true,
+    "tags": [
+      "stationery",
+      "writing",
+      "office"
+    ],
+    "metaTitle": "Pens - Unruled by PaperMate",
+    "metaDescription": "Shop high-quality pens with unruled pattern by PaperMate.",
+    "metaKeywords": [
+      "stationery",
+      "writing",
+      "office"
+    ],
+    "weight": 0.94,
+    "dimensions": {
+      "length": 20.1,
+      "width": 12.2,
+      "height": 1.3
+    },
+    "rating": 4.0,
+    "numReviews": 47
+  },
+  {
+    "name": "Pens - Dotted 150 Pages",
+    "description": "High-quality pens with dotted pattern and 150 pages. Perfect for everyday use.",
+    "price": 10.21,
+    "originalPrice": 13.02,
+    "quantityInStock": 94,
+    "sku": "PE-DO-014",
+    "category": "Pens",
+    "brand": "BrightMark",
+    "pages": [
+      "150"
+    ],
+    "patterns": [
+      "Dotted"
+    ],
+    "material": "Softcover",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=114",
+        "altText": "Pens Image"
+      }
+    ],
+    "isFeatured": true,
+    "isPublished": true,
+    "tags": [
+      "writing",
+      "stationery",
+      "notes"
+    ],
+    "metaTitle": "Pens - Dotted by BrightMark",
+    "metaDescription": "Shop high-quality pens with dotted pattern by BrightMark.",
+    "metaKeywords": [
+      "writing",
+      "stationery",
+      "notes"
+    ],
+    "weight": 0.45,
+    "dimensions": {
+      "length": 20.5,
+      "width": 18.1,
+      "height": 1.2
+    },
+    "rating": 3.5,
+    "numReviews": 46
+  },
+  {
+    "name": "Markers - Dotted 100 Pages",
+    "description": "High-quality markers with dotted pattern and 100 pages. Perfect for everyday use.",
+    "price": 18.8,
+    "originalPrice": 24.74,
+    "quantityInStock": 35,
+    "sku": "MA-DO-015",
+    "category": "Markers",
+    "brand": "InkJoy",
+    "pages": [
+      "100"
+    ],
+    "patterns": [
+      "Dotted"
+    ],
+    "material": "Hardcover",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=115",
+        "altText": "Markers Image"
+      }
+    ],
+    "isFeatured": true,
+    "isPublished": true,
+    "tags": [
+      "writing",
+      "office",
+      "notes"
+    ],
+    "metaTitle": "Markers - Dotted by InkJoy",
+    "metaDescription": "Shop high-quality markers with dotted pattern by InkJoy.",
+    "metaKeywords": [
+      "writing",
+      "office",
+      "notes"
+    ],
+    "weight": 0.54,
+    "dimensions": {
+      "length": 22.4,
+      "width": 16.8,
+      "height": 2.2
+    },
+    "rating": 3.4,
+    "numReviews": 7
+  },
+  {
+    "name": "Sticky Notes - Unruled 200 Pages",
+    "description": "High-quality sticky notes with unruled pattern and 200 pages. Perfect for everyday use.",
+    "price": 11.59,
+    "originalPrice": 17.37,
+    "quantityInStock": 10,
+    "sku": "ST-UN-016",
+    "category": "Sticky Notes",
+    "brand": "NoteCraft",
+    "pages": [
+      "200"
+    ],
+    "patterns": [
+      "Unruled"
+    ],
+    "material": "Cardboard",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=116",
+        "altText": "Sticky Notes Image"
+      }
+    ],
+    "isFeatured": false,
+    "isPublished": true,
+    "tags": [
+      "school",
+      "writing",
+      "office"
+    ],
+    "metaTitle": "Sticky Notes - Unruled by NoteCraft",
+    "metaDescription": "Shop high-quality sticky notes with unruled pattern by NoteCraft.",
+    "metaKeywords": [
+      "school",
+      "writing",
+      "office"
+    ],
+    "weight": 0.85,
+    "dimensions": {
+      "length": 12.3,
+      "width": 19.2,
+      "height": 1.3
+    },
+    "rating": 3.9,
+    "numReviews": 28
+  },
+  {
+    "name": "Markers - Ruled 80 Pages",
+    "description": "High-quality markers with ruled pattern and 80 pages. Perfect for everyday use.",
+    "price": 5.4,
+    "originalPrice": 10.17,
+    "quantityInStock": 57,
+    "sku": "MA-RU-017",
+    "category": "Markers",
+    "brand": "NoteCraft",
+    "pages": [
+      "80"
+    ],
     "patterns": [
       "Ruled"
     ],
     "material": "Plastic",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=221",
-        "altText": "Folders Image 21"
-      }
-    ],
-    "isFeatured": true,
-    "isPublished": true,
-    "tags": [
-      "stationery",
-      "school",
-      "office",
-      "folders"
-    ],
-    "metaTitle": "Folders - Ruled by WriteWell",
-    "metaDescription": "Shop high-quality folders with ruled patterns by WriteWell. Ideal for school and office.",
-    "metaKeywords": [
-      "folders",
-      "ruled",
-      "writewell",
-      "stationery"
-    ],
-    "weight": 0.66,
-    "dimensions": {
-      "length": 24.0,
-      "width": 11.1,
-      "height": 3.4
-    },
-    "rating": 4.1,
-    "numReviews": 9
-  },
-  {
-    "name": "Pen - Dotted 22",
-    "description": "A high-quality pens with dotted pages. Great for everyday use in school or office.",
-    "price": 12.49,
-    "originalPrice": 14.17,
-    "quantityInStock": 26,
-    "sku": "PE-DO-022",
-    "category": "Pens",
-    "brand": "PaperMate",
-    "pages": 95,
-    "patterns": [
-      "Dotted"
-    ],
-    "material": "Cardboard",
-    "images": [
-      {
-        "url": "https://picsum.photos/500/500?random=222",
-        "altText": "Pens Image 22"
-      }
-    ],
-    "isFeatured": true,
-    "isPublished": true,
-    "tags": [
-      "stationery",
-      "school",
-      "office",
-      "pens"
-    ],
-    "metaTitle": "Pens - Dotted by PaperMate",
-    "metaDescription": "Shop high-quality pens with dotted patterns by PaperMate. Ideal for school and office.",
-    "metaKeywords": [
-      "pens",
-      "dotted",
-      "papermate",
-      "stationery"
-    ],
-    "weight": 0.92,
-    "dimensions": {
-      "length": 19.6,
-      "width": 18.5,
-      "height": 1.5
-    },
-    "rating": 4.5,
-    "numReviews": 30
-  },
-  {
-    "name": "Marker - Unruled 23",
-    "description": "A high-quality markers with unruled pages. Great for everyday use in school or office.",
-    "price": 6.4,
-    "originalPrice": 9.87,
-    "quantityInStock": 70,
-    "sku": "MA-UN-023",
-    "category": "Markers",
-    "brand": "PaperMate",
-    "pages": 143,
-    "patterns": [
-      "Unruled"
-    ],
-    "material": "Leatherette",
-    "images": [
-      {
-        "url": "https://picsum.photos/500/500?random=223",
-        "altText": "Markers Image 23"
-      }
-    ],
-    "isFeatured": true,
-    "isPublished": true,
-    "tags": [
-      "stationery",
-      "school",
-      "office",
-      "markers"
-    ],
-    "metaTitle": "Markers - Unruled by PaperMate",
-    "metaDescription": "Shop high-quality markers with unruled patterns by PaperMate. Ideal for school and office.",
-    "metaKeywords": [
-      "markers",
-      "unruled",
-      "papermate",
-      "stationery"
-    ],
-    "weight": 0.51,
-    "dimensions": {
-      "length": 22.7,
-      "width": 18.5,
-      "height": 4.4
-    },
-    "rating": 4.9,
-    "numReviews": 6
-  },
-  {
-    "name": "Marker - Dotted 24",
-    "description": "A high-quality markers with dotted pages. Great for everyday use in school or office.",
-    "price": 8.5,
-    "originalPrice": 12.5,
-    "quantityInStock": 23,
-    "sku": "MA-DO-024",
-    "category": "Markers",
-    "brand": "WriteWell",
-    "pages": 129,
-    "patterns": [
-      "Dotted"
-    ],
-    "material": "Plastic",
-    "images": [
-      {
-        "url": "https://picsum.photos/500/500?random=224",
-        "altText": "Markers Image 24"
-      }
-    ],
-    "isFeatured": true,
-    "isPublished": true,
-    "tags": [
-      "stationery",
-      "school",
-      "office",
-      "markers"
-    ],
-    "metaTitle": "Markers - Dotted by WriteWell",
-    "metaDescription": "Shop high-quality markers with dotted patterns by WriteWell. Ideal for school and office.",
-    "metaKeywords": [
-      "markers",
-      "dotted",
-      "writewell",
-      "stationery"
-    ],
-    "weight": 0.48,
-    "dimensions": {
-      "length": 15.7,
-      "width": 11.6,
-      "height": 3.9
-    },
-    "rating": 4.3,
-    "numReviews": 11
-  },
-  {
-    "name": "Notebook - Grid 25",
-    "description": "A high-quality notebooks with grid pages. Great for everyday use in school or office.",
-    "price": 12.98,
-    "originalPrice": 14.9,
-    "quantityInStock": 88,
-    "sku": "NO-GR-025",
-    "category": "Notebooks",
-    "brand": "SmoothWrite",
-    "pages": 124,
-    "patterns": [
-      "Grid"
-    ],
-    "material": "Plastic",
-    "images": [
-      {
-        "url": "https://picsum.photos/500/500?random=225",
-        "altText": "Notebooks Image 25"
+        "url": "https://picsum.photos/500/500?random=117",
+        "altText": "Markers Image"
       }
     ],
     "isFeatured": false,
     "isPublished": true,
     "tags": [
+      "notes",
       "stationery",
-      "school",
-      "office",
-      "notebooks"
+      "school"
     ],
-    "metaTitle": "Notebooks - Grid by SmoothWrite",
-    "metaDescription": "Shop high-quality notebooks with grid patterns by SmoothWrite. Ideal for school and office.",
+    "metaTitle": "Markers - Ruled by NoteCraft",
+    "metaDescription": "Shop high-quality markers with ruled pattern by NoteCraft.",
     "metaKeywords": [
-      "notebooks",
-      "grid",
-      "smoothwrite",
-      "stationery"
+      "notes",
+      "stationery",
+      "school"
     ],
-    "weight": 0.8,
+    "weight": 1.46,
     "dimensions": {
-      "length": 19.9,
-      "width": 15.5,
-      "height": 3.4
+      "length": 11.7,
+      "width": 15.7,
+      "height": 2.1
     },
     "rating": 4.4,
-    "numReviews": 43
+    "numReviews": 24
+  },
+  {
+    "name": "Markers - Dotted 100 Pages",
+    "description": "High-quality markers with dotted pattern and 100 pages. Perfect for everyday use.",
+    "price": 5.42,
+    "originalPrice": 8.82,
+    "quantityInStock": 105,
+    "sku": "MA-DO-018",
+    "category": "Markers",
+    "brand": "NoteCraft",
+    "pages": [
+      "100"
+    ],
+    "patterns": [
+      "Dotted"
+    ],
+    "material": "Hardcover",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=118",
+        "altText": "Markers Image"
+      }
+    ],
+    "isFeatured": false,
+    "isPublished": true,
+    "tags": [
+      "notes",
+      "stationery",
+      "writing"
+    ],
+    "metaTitle": "Markers - Dotted by NoteCraft",
+    "metaDescription": "Shop high-quality markers with dotted pattern by NoteCraft.",
+    "metaKeywords": [
+      "notes",
+      "stationery",
+      "writing"
+    ],
+    "weight": 0.32,
+    "dimensions": {
+      "length": 16.9,
+      "width": 18.7,
+      "height": 2.0
+    },
+    "rating": 3.9,
+    "numReviews": 11
+  },
+  {
+    "name": "Pens - Dotted 200 Pages",
+    "description": "High-quality pens with dotted pattern and 200 pages. Perfect for everyday use.",
+    "price": 12.71,
+    "originalPrice": 15.86,
+    "quantityInStock": 174,
+    "sku": "PE-DO-019",
+    "category": "Pens",
+    "brand": "ClassMate",
+    "pages": [
+      "200"
+    ],
+    "patterns": [
+      "Dotted"
+    ],
+    "material": "Paper",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=119",
+        "altText": "Pens Image"
+      }
+    ],
+    "isFeatured": false,
+    "isPublished": true,
+    "tags": [
+      "office",
+      "stationery",
+      "writing"
+    ],
+    "metaTitle": "Pens - Dotted by ClassMate",
+    "metaDescription": "Shop high-quality pens with dotted pattern by ClassMate.",
+    "metaKeywords": [
+      "office",
+      "stationery",
+      "writing"
+    ],
+    "weight": 0.4,
+    "dimensions": {
+      "length": 15.4,
+      "width": 10.3,
+      "height": 2.1
+    },
+    "rating": 3.4,
+    "numReviews": 16
+  },
+  {
+    "name": "Highlighters - Unruled 200 Pages",
+    "description": "High-quality highlighters with unruled pattern and 200 pages. Perfect for everyday use.",
+    "price": 14.96,
+    "originalPrice": 18.48,
+    "quantityInStock": 150,
+    "sku": "HI-UN-020",
+    "category": "Highlighters",
+    "brand": "ClassMate",
+    "pages": [
+      "200"
+    ],
+    "patterns": [
+      "Unruled"
+    ],
+    "material": "Plastic",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=120",
+        "altText": "Highlighters Image"
+      }
+    ],
+    "isFeatured": true,
+    "isPublished": true,
+    "tags": [
+      "school",
+      "notes",
+      "writing"
+    ],
+    "metaTitle": "Highlighters - Unruled by ClassMate",
+    "metaDescription": "Shop high-quality highlighters with unruled pattern by ClassMate.",
+    "metaKeywords": [
+      "school",
+      "notes",
+      "writing"
+    ],
+    "weight": 0.93,
+    "dimensions": {
+      "length": 14.9,
+      "width": 17.0,
+      "height": 2.0
+    },
+    "rating": 3.9,
+    "numReviews": 22
+  },
+  {
+    "name": "Sticky Notes - Grid 200 Pages",
+    "description": "High-quality sticky notes with grid pattern and 200 pages. Perfect for everyday use.",
+    "price": 5.93,
+    "originalPrice": 7.97,
+    "quantityInStock": 144,
+    "sku": "ST-GR-021",
+    "category": "Sticky Notes",
+    "brand": "NoteCraft",
+    "pages": [
+      "200"
+    ],
+    "patterns": [
+      "Grid"
+    ],
+    "material": "Cardboard",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=121",
+        "altText": "Sticky Notes Image"
+      }
+    ],
+    "isFeatured": false,
+    "isPublished": true,
+    "tags": [
+      "office",
+      "notes",
+      "writing"
+    ],
+    "metaTitle": "Sticky Notes - Grid by NoteCraft",
+    "metaDescription": "Shop high-quality sticky notes with grid pattern by NoteCraft.",
+    "metaKeywords": [
+      "office",
+      "notes",
+      "writing"
+    ],
+    "weight": 1.03,
+    "dimensions": {
+      "length": 13.5,
+      "width": 18.2,
+      "height": 2.5
+    },
+    "rating": 4.0,
+    "numReviews": 20
+  },
+  {
+    "name": "Sticky Notes - Ruled 100 Pages",
+    "description": "High-quality sticky notes with ruled pattern and 100 pages. Perfect for everyday use.",
+    "price": 11.86,
+    "originalPrice": 15.79,
+    "quantityInStock": 148,
+    "sku": "ST-RU-022",
+    "category": "Sticky Notes",
+    "brand": "BrightMark",
+    "pages": [
+      "100"
+    ],
+    "patterns": [
+      "Ruled"
+    ],
+    "material": "Softcover",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=122",
+        "altText": "Sticky Notes Image"
+      }
+    ],
+    "isFeatured": false,
+    "isPublished": true,
+    "tags": [
+      "school",
+      "stationery",
+      "office"
+    ],
+    "metaTitle": "Sticky Notes - Ruled by BrightMark",
+    "metaDescription": "Shop high-quality sticky notes with ruled pattern by BrightMark.",
+    "metaKeywords": [
+      "school",
+      "stationery",
+      "office"
+    ],
+    "weight": 1.35,
+    "dimensions": {
+      "length": 15.8,
+      "width": 16.0,
+      "height": 2.8
+    },
+    "rating": 4.8,
+    "numReviews": 20
+  },
+  {
+    "name": "Highlighters - Ruled 200 Pages",
+    "description": "High-quality highlighters with ruled pattern and 200 pages. Perfect for everyday use.",
+    "price": 10.73,
+    "originalPrice": 16.1,
+    "quantityInStock": 162,
+    "sku": "HI-RU-023",
+    "category": "Highlighters",
+    "brand": "PaperMate",
+    "pages": [
+      "200"
+    ],
+    "patterns": [
+      "Ruled"
+    ],
+    "material": "Plastic",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=123",
+        "altText": "Highlighters Image"
+      }
+    ],
+    "isFeatured": false,
+    "isPublished": true,
+    "tags": [
+      "office",
+      "notes",
+      "writing"
+    ],
+    "metaTitle": "Highlighters - Ruled by PaperMate",
+    "metaDescription": "Shop high-quality highlighters with ruled pattern by PaperMate.",
+    "metaKeywords": [
+      "office",
+      "notes",
+      "writing"
+    ],
+    "weight": 0.68,
+    "dimensions": {
+      "length": 20.6,
+      "width": 11.6,
+      "height": 1.3
+    },
+    "rating": 4.2,
+    "numReviews": 37
+  },
+  {
+    "name": "Sticky Notes - Unruled 150 Pages",
+    "description": "High-quality sticky notes with unruled pattern and 150 pages. Perfect for everyday use.",
+    "price": 8.03,
+    "originalPrice": 11.6,
+    "quantityInStock": 125,
+    "sku": "ST-UN-024",
+    "category": "Sticky Notes",
+    "brand": "PaperMate",
+    "pages": [
+      "150"
+    ],
+    "patterns": [
+      "Unruled"
+    ],
+    "material": "Softcover",
+    "images": [
+      {
+        "url": "https://picsum.photos/500/500?random=124",
+        "altText": "Sticky Notes Image"
+      }
+    ],
+    "isFeatured": true,
+    "isPublished": true,
+    "tags": [
+      "office",
+      "writing",
+      "notes",
+    ],
+    "metaTitle": "Sticky Notes - Unruled by PaperMate",
+    "metaDescription": "Shop high-quality sticky notes with unruled pattern by PaperMate.",
+    "metaKeywords": [
+      "office",
+      "writing",
+      "notes"
+    ],
+    "weight": 0.66,
+    "dimensions": {
+      "length": 17.5,
+      "width": 14.4,
+      "height": 1.7
+    },
+    "rating": 4.4,
+    "numReviews": 48
   }
 ];
 

@@ -290,8 +290,8 @@ router.put("/:id", protect, admin, async (req, res) => {
       product.metaKeywords = metaKeywords || product.metaKeywords;
       product.weight = weight || product.weight;
       product.dimensions = dimensions || product.dimensions;
-      product.rating = rating || product.rating;
-      product.numReviews = numReviews || product.numReviews;
+      product.rating = rating ?? product.rating;
+      product.numReviews = numReviews ?? product.numReviews;
 
       const updatedProduct = await product.save();
       res.json(updatedProduct);
