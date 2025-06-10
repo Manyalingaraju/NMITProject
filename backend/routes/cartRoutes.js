@@ -183,4 +183,79 @@ router.get("/", async (req, res) => {
   }
 });
 
+// @route   POST /api/cart/merge
+// @desc    Merge guest cart into user cart on login OR return guest cart if no userId
+// @access  Public (guest-only merge), Private (for user promotion)
+
+router.post("/merge", async (req, res) => {
+  const guestId = req.body.guestId;
+  const userId = req.body.userId; // only used if provided WITH guestId
+
+  // Enforce: guestId must be provided
+  if (!guestId) {
+    return res.status(400).json({ message: "guestId is required" });
+  }
+
+  // Reject request with only userId
+  if (!guestId && userId) {
+    return res.status(401).json({ message: "Unauthorized: merging allowed only after login, not via userId in body" });
+  }
+
+  try {
+    const guestCart = await Cart.findOne({ guestId });
+
+    if (!guestCart || !Array.isArray(guestCart.items) || guestCart.items.length === 0) {
+      return res.status(404).json({ message: "Guest cart is empty or not found" });
+    }
+
+    // If userId is provided, check and promote/merge
+    if (userId) {
+      const userCart = await Cart.findOne({ userId });
+
+      if (userCart) {
+        // Merge guest cart into existing user cart
+        guestCart.items.forEach((guestItem) => {
+          const index = userCart.items.findIndex(
+            (item) =>
+              item.productID.toString() === guestItem.productID.toString() &&
+              item.category === guestItem.category &&
+              item.material === guestItem.material
+          );
+
+          if (index > -1) {
+            userCart.items[index].quantity += guestItem.quantity;
+          } else {
+            userCart.items.push(guestItem);
+          }
+        });
+
+        // Recalculate total
+        userCart.totalPrice = userCart.items.reduce(
+          (acc, item) => acc + item.price * item.quantity,
+          0
+        );
+
+        await userCart.save();
+        await Cart.findOneAndDelete({ guestId });
+
+        return res.status(200).json({ message: "Cart merged successfully", cart: userCart });
+      } else {
+        // No existing user cart → assign guest cart to user
+        guestCart.userId = userId;
+        guestCart.guestId = undefined;
+        await guestCart.save();
+
+        return res.status(200).json({ message: "Guest cart assigned to user", cart: guestCart });
+      }
+    }
+
+    // If only guestId, just return the cart
+    return res.status(200).json({ message: "Guest cart returned", cart: guestCart });
+
+  } catch (error) {
+    console.error("Error merging carts:", error);
+    return res.status(500).json({ message: "Server error", error: error.message });
+  }
+});
+
 module.exports = router;
