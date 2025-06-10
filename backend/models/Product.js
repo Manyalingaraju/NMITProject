@@ -82,6 +82,15 @@ const productSchema = new mongoose.Schema(
       width: Number,
       height: Number,
     },
+   rating: {
+  type: Number,
+  default: 0,
+},
+numReviews: {
+  type: Number,
+  default: 0,
+},
+
   },
   {
     timestamps: true,

@@ -16,6 +16,7 @@ router.get("/", async (req, res) => {
       material,
       brand,
       type,
+      price,
       minPrice,
       maxPrice,
       sortBy,
@@ -25,42 +26,46 @@ router.get("/", async (req, res) => {
     let query = {};
     let sort = {};
 
-    // Filters
-    if (category && category.toLowerCase() !== "all") {
-      query.category = category;
-    }
+    // Helper to handle comma-separated filters
+    const addFilter = (field, value) => {
+      if (!value) return;
+      const items = value.split(",").map(v => v.trim()).filter(Boolean);
+      query[field] = items.length > 1 ? { $in: items } : items[0];
+    };
 
-    if (material) {
-      query.material = { $in: material.split(",") };
-    }
+    addFilter("category", category && category.toLowerCase() !== "all" ? category : null);
+    addFilter("material", material);
+    addFilter("brand", brand);
+    addFilter("size", size);
+    addFilter("color", color);
+    addFilter("type", type);
 
-    if (brand) {
-      query.brand = { $in: brand.split(",") };
-    }
+    // Price filter
+   // ───────────── Price filter ─────────────
+const buildPriceQuery = (exact, min, max) => {
+  // use .trim() to catch accidental spaces
+  const toNum = v => v !== undefined && v !== null && v.toString().trim() !== ""
+    ? Number(v)
+    : undefined;
 
-    if (size) {
-      query.size = { $in: size.split(",") };
-    }
+  const pExact = toNum(exact);
+  const pMin   = toNum(min);
+  const pMax   = toNum(max);
 
-    if (color) {
-      query.color = { $in: [color] };
-    }
+  if (pExact !== undefined) return pExact;
 
-    // ✅ Price exact match OR range
-if (req.query.price) {
-  query.price = Number(req.query.price);
-} else if (minPrice || maxPrice) {
-  query.price = {};
-  if (minPrice) query.price.$gte = Number(minPrice);
-  if (maxPrice) query.price.$lte = Number(maxPrice);
-}
+  const pQry = {};
+  if (pMin !== undefined) pQry.$gte = pMin;
+  if (pMax !== undefined) pQry.$lte = pMax;
+
+  return Object.keys(pQry).length ? pQry : undefined;
+};
+
+const priceFilter = buildPriceQuery(price, minPrice, maxPrice);
+if (priceFilter !== undefined) query.price = priceFilter;
 
 
-    if (type) {
-      query.type = { $in: [type] };
-    }
-
-    // Sort logic
+    // Sort options
     if (sortBy) {
       switch (sortBy) {
         case "priceAsc":
@@ -73,18 +78,59 @@ if (req.query.price) {
           sort = { rating: -1 };
           break;
         default:
-          break;
+          sort = {};
       }
     }
 
-    // Fetch products with filters
-    const products = await Product.find(query).sort(sort).limit(Number(limit) || 0);
+    const products = await Product.find(query)
+      .sort(sort)
+      .limit(Number(limit) || 0);
+
     res.json(products);
   } catch (error) {
     console.error("Error filtering products:", error);
     res.status(500).send("Server Error");
   }
 });
+//@route GET/api/products/best-seller
+//@desc retrive the product with highest rating
+//@access public
+
+router.get("/best-seller", async (req, res) => {
+  try { 
+    const highestRated = await Product.findOne().sort({ rating: -1 }).limit(1);
+    if (!highestRated) {
+      return res.status(404).json({ message: "No products found" });
+    }
+
+    const bestSellers = await Product.find({ rating: highestRated.rating });
+
+    res.json(bestSellers);
+  } catch (error) {
+    console.error("Error fetching best-seller product(s):", error);
+    res.status(500).send("Server error");
+  }
+});
+//@route GET/api/products/new-arrivls
+//@desc Retrive latest 4 products -creation date
+//@access public
+// @route   GET /api/products/new-arrivals
+// @desc    Retrieve the latest 4 products by creation date
+// @access  Public
+
+router.get("/new-arrivals", async (req, res) => {
+  try {
+    const newArrivals = await Product.find()
+      .sort({ createdAt: -1 }) // Sort by most recent first
+      .limit(4);               // Limit to 4 products
+
+    res.json(newArrivals);
+  } catch (error) {
+    console.error("Error fetching new arrivals:", error.message);
+    res.status(500).send("Server error");
+  }
+});
+
 
 // @route   GET /api/products/:id
 // @desc    Get a single product by ID
@@ -99,6 +145,33 @@ router.get("/:id", async (req, res) => {
     res.status(500).send("Server error");
   }
 });
+// @route   GET /api/products/similar/:id
+// @desc    Retrieve similar products based on category OR material
+// @access  Public
+
+router.get("/similar/:id", async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+    if (!product) {
+      return res.status(404).json({ message: "Product not found" });
+    }
+
+    // Find products with either the same category or same material (excluding the current product)
+    const similarProducts = await Product.find({
+      _id: { $ne: product._id },
+      $or: [
+        { category: product.category },
+        { material: product.material }
+      ]
+    });
+
+    res.json(similarProducts);
+  } catch (error) {
+    console.error("Error fetching similar products:", error);
+    res.status(500).send("Server error");
+  }
+});
+
 
 // @route   POST /api/products
 // @desc    Create a new product
