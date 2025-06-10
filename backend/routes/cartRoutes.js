@@ -164,7 +164,10 @@ router.delete("/", async (req, res) => {
 // @access  Public
 
 router.get("/", async (req, res) => {
-  const { userId, guestId } = req.query;
+  //const { userId, guestId } = req.query;
+  const userId = req.query.userId || req.query.userid;
+  const guestId = req.query.guestId || req.query.guestid;
+
 
   try {
     const cart = await getCart(userId, guestId);
