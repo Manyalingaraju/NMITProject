@@ -1,4 +1,3 @@
-// Import required modules
 const express = require("express");
 const asyncHandler = require("express-async-handler");
 const Checkout = require("../models/Checkout");
@@ -8,15 +7,11 @@ const { protect } = require("../middleware/authMiddleware");
 
 const router = express.Router();
 
-// @desc    Create a new checkout
-// @route   POST /api/checkout
-// @access  Private
+// Create a new checkout
 router.post(
   "/",
   protect,
   asyncHandler(async (req, res) => {
-   
-
     const { checkoutItems, shippingAddress, paymentMethod, totalPrice } = req.body;
 
     if (!checkoutItems?.length) {
@@ -25,7 +20,7 @@ router.post(
 
     const checkout = await Checkout.create({
       user: req.user._id,
-      checkoutItems,
+      checkoutItems,         // each item must include quantity
       shippingAddress,
       paymentMethod,
       totalPrice,
@@ -36,16 +31,14 @@ router.post(
   })
 );
 
-// @desc    Mark checkout as paid
-// @route   PUT /api/checkout/:id/pay
-// @access  Private
+// Mark checkout as paid
 router.put(
   "/:id/pay",
   protect,
   asyncHandler(async (req, res) => {
     const { paymentStatus, paymentDetails } = req.body;
-    const checkout = await Checkout.findById(req.params.id);
 
+    const checkout = await Checkout.findById(req.params.id);
     if (!checkout) return res.status(404).json({ message: "Checkout not found" });
     if (paymentStatus?.toLowerCase() !== "paid") {
       return res.status(400).json({ message: "Invalid payment status" });
@@ -61,9 +54,7 @@ router.put(
   })
 );
 
-// @desc    Finalize checkout and create order
-// @route   POST /api/checkout/:id/finalize
-// @access  Private
+// Finalize checkout and create order
 router.post(
   "/:id/finalize",
   protect,
@@ -72,14 +63,12 @@ router.post(
 
     if (!checkout)        return res.status(404).json({ message: "Checkout not found" });
     if (!checkout.isPaid) return res.status(400).json({ message: "Checkout is not paid" });
-    if (checkout.isFinalized) {
+    if (checkout.isFinalized)
       return res.status(400).json({ message: "Checkout already finalized" });
-    }
-
 
     const order = await Order.create({
       user:            checkout.user,
-      orderItems:      checkout.checkoutItems,
+      orderItems:      checkout.checkoutItems,   // quantity comes along
       shippingAddress: checkout.shippingAddress,
       paymentMethod:   checkout.paymentMethod,
       totalPrice:      checkout.totalPrice,
@@ -93,7 +82,6 @@ router.post(
     checkout.isFinalized = true;
     checkout.finalizedAt = Date.now();
     await checkout.save();
-
     await Cart.findOneAndDelete({ user: checkout.user });
 
     res.status(201).json(order);

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-// Define a schema for individual checkout items
+// Schema for a single item in the checkout
 const checkoutItemSchema = new mongoose.Schema(
   {
     productId: {
@@ -8,14 +8,15 @@ const checkoutItemSchema = new mongoose.Schema(
       ref: "Product",
       required: true,
     },
-    name: { type: String, required: true },
-    image: { type: String, required: true },
-    price: { type: Number, required: true },
+    name:     { type: String, required: true },
+    image:    { type: String, required: true },
+    price:    { type: Number, required: true },
+    quantity: { type: Number, required: true, default: 1 }   // ← added
   },
-  { _id: false } // Prevent Mongoose from creating _id for each item
+  { _id: false }
 );
 
-// Define the main checkout schema
+// Main checkout schema
 const checkoutSchema = new mongoose.Schema(
   {
     user: {
@@ -23,28 +24,22 @@ const checkoutSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
-
-    // Match this name to what you're using in the route: checkoutItems
     checkoutItems: [checkoutItemSchema],
 
     shippingAddress: {
-      address: { type: String, required: true },
-      city: { type: String, required: true },
-      postalCode: { type: String, required: true },
-      country: { type: String, required: true },
+      address:     { type: String, required: true },
+      city:        { type: String, required: true },
+      postalCode:  { type: String, required: true },
+      country:     { type: String, required: true },
     },
 
     paymentMethod: { type: String, required: true },
-    totalPrice: { type: Number, required: true },
+    totalPrice:    { type: Number, required: true },
 
-    isPaid: { type: Boolean, default: false },
-    paidAt: { type: Date },
-
+    isPaid:      { type: Boolean, default: false },
+    paidAt:      { type: Date },
     paymentStatus: { type: String, default: "pending" },
-
-    paymentDetails: {
-      type: mongoose.Schema.Types.Mixed, // Optional: Transaction ID, etc.
-    },
+    paymentDetails: { type: mongoose.Schema.Types.Mixed },
 
     isFinalized: { type: Boolean, default: false },
     finalizedAt: { type: Date },
@@ -52,5 +47,4 @@ const checkoutSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// Export the model
 module.exports = mongoose.model("Checkout", checkoutSchema);
