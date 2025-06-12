@@ -1,3 +1,4 @@
+
 const products = [
   {
     "name": "Notebooks - Unruled 50 Pages",
@@ -1126,4 +1127,4 @@ const products = [
   }
 ];
 
-module.exports = products;
+export default products;
