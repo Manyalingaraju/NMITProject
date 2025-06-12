@@ -1,14 +1,17 @@
 import React, { useState } from 'react'; // Import useState
 import featured from "..//assets/featured.png";
 import { Link } from 'react-router-dom';
+import {loginUser} from "../redux/slices/authSlice"
+import { useDispatch } from 'react-redux';
 
 const Login = () => {
     const [email, setEmail] = useState(""); // Corrected useState for email
     const [password, setPassword] = useState(""); // Corrected useState for password
+    const dispatch =useDispatch();
+
     const handleSubmit=(e)=>{
         e.preventDefault();
-        console.log(`User Login: {  email: ${email}, password: ${password} }`);
-
+        dispatch(loginUser({email,password}));
     };
 
     return (
