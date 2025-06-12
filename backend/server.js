@@ -14,8 +14,9 @@ const checkoutRoutes = require("./routes/checkoutRoutes");
 const orderRoutes = require("./routes/orderRoutes");
 const uploadRoutes = require("./routes/uploadRoutes");
 const subscribeRoutes=require("./routes/subscribeRoute");
-const adminRoutes=require("./routes/adminRoutes")
-
+const adminRoutes=require("./routes/adminRoutes");
+const productAdminRoutes = require("./routes/productAdminRoutes");
+const adminOrderRoutes = require("./routes/adminOrderRoutes");
 // Connect to MongoDB
 connectDB();
 
@@ -37,6 +38,9 @@ app.use("/api/orders", orderRoutes);
 app.use("/api/upload", uploadRoutes); 
 app.use("/api", subscribeRoutes); 
 app.use("/api", adminRoutes); // ✅ Mounts routes like /api/admin/users
+app.use("/api", productAdminRoutes);
+app.use("/api/admin", adminOrderRoutes);
+
 
 // Start the server
 const PORT = process.env.PORT || 9000;
