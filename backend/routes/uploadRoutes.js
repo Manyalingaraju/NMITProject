@@ -48,4 +48,4 @@ router.post("/", upload.single("image"), async (req, res) => {
   }
 });
 
-module.exports = router; // ✅ Make sure to export the router
+module.exports = router; // Make sure to export the router

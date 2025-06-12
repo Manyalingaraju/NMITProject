@@ -12,6 +12,7 @@ const cartRoutes = require("./routes/cartRoutes");
 const checkoutRoutes = require("./routes/checkoutRoutes");
 const orderRoutes = require("./routes/orderRoutes");
 const uploadRoutes = require("./routes/uploadRoutes");
+const subscribeRoutes=require("./routes/subscribeRoute")
 
 // Connect to MongoDB
 connectDB();
@@ -31,7 +32,8 @@ app.use("/api/products", productRoutes);
 app.use("/api/cart", cartRoutes);
 app.use("/api/checkout", checkoutRoutes);
 app.use("/api/orders", orderRoutes);
-app.use("/api/upload", uploadRoutes); // <-- Fix: missing slash in your previous code
+app.use("/api/upload", uploadRoutes); 
+app.use("/api", subscribeRoutes); 
 
 // Start the server
 const PORT = process.env.PORT || 9000;
