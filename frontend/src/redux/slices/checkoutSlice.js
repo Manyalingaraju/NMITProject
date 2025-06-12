@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// ✅ No conflict here now
+//  No conflict here now
 export const createCheckout = createAsyncThunk(
   "checkout/createCheckout",
   async (checkoutdata, { rejectWithValue }) => {
