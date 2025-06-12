@@ -18,7 +18,7 @@ import OrderManagement from "./components/Admin/OrderManagement";
 import ProductManagement from "./components/Admin/ProductManagement";
 import EditProductPage from "./components/Admin/EditProductPage";
 
-import { Provider } from "react-redux"; // 
+import { Provider } from "react-redux"; 
 import store from "./redux/store";
 
 const App = () => {

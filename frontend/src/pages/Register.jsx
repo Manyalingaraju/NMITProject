@@ -1,14 +1,18 @@
 import React, { useState } from 'react'; // Import useState
 import { Link } from 'react-router-dom';
 import Registered from"..//assets/Register.png";
+import { registerUser } from '../redux/slices/authSlice';
+import { useDispatch } from "react-redux";
+
 
 const Register = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState(""); // Corrected useState for email
     const [password, setPassword] = useState(""); // Corrected useState for password
+    const dispatch = useDispatch();
     const handleSubmit=(e)=>{
         e.preventDefault();
-        console.log(`User Registered: { name: ${name}, email: ${email}, password: ${password} }`);
+        dispatch(registerUser({name,email,password}));
 
     };
  
