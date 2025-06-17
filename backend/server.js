@@ -25,6 +25,11 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors());
+const path = require("path");
+app.use('/assets', express.static(path.join(__dirname, 'assetsBackend')));
+
+
+
 
 // Base route
 app.get("/", (req, res) => res.send("WELCOME TO NMIT API!"));
