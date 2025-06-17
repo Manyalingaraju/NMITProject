@@ -3,15 +3,15 @@ const products = [
     "name": "Notebook - Softcover - 200 Pages",
     "sku": "NO-CA-001",
     "description": "High-quality notebook made with Softcover.",
-    "price": 15.27,
-    "originalPrice": 17.54,
+    "price": 35,
+    "originalPrice": 35,
     "quantityInStock": 190,
     "category": "Notebooks",
-    "brand": "Camlin",
+    "brand": "Chandra's",
     "material": "Softcover",
     "images": [
       {
-        "url": "http://localhost:9000/assets/trial.png",
+        "url": "http://localhost:9000/assets/chandrasBook.png",
         "altText": "Notebook Image"
       }
     ],
@@ -20,19 +20,19 @@ const products = [
     "numReviews": 123
   },
   {
-    "name": "Notebook - Plastic - 50 Pages",
+    "name": "Blue books ",
     "sku": "NO-LU-002",
     "description": "High-quality notebook made with Plastic.",
-    "price": 19.68,
-    "originalPrice": 27.74,
+    "price": 10,
+    "originalPrice": 12,
     "quantityInStock": 76,
     "category": "Notebooks",
-    "brand": "Luxor",
-    "material": "Plastic",
+    "brand": "Chandar's",
+    "material": "Paper",
     "images": [
       {
-        "url": "http://localhost:9000/assets/trial.png",
-        "altText": "Notebook Image"
+        "url": "http://localhost:9000/assets/BlueBook.png",
+        "altText": "Bluebook Image"
       }
     ],
     "isPublished": true,
@@ -40,18 +40,18 @@ const products = [
     "numReviews": 116
   },
   {
-    "name": "Notebook - Plastic - 150 Pages",
+    "name": "Notebook - Paper - 100 Pages",
     "sku": "NO-LU-003",
     "description": "High-quality notebook made with Plastic.",
-    "price": 15.49,
-    "originalPrice": 17.69,
+    "price": 25,
+    "originalPrice": 25,
     "quantityInStock": 191,
     "category": "Notebooks",
-    "brand": "Luxor",
-    "material": "Plastic",
+    "brand": "Chandra's",
+    "material": "softcover",
     "images": [
       {
-        "url": "http://localhost:9000/assets/trial.png",
+        "url": "http://localhost:9000/assets/chandrasBook.png",
         "altText": "Notebook Image"
       }
     ],
@@ -63,15 +63,15 @@ const products = [
     "name": "Notebook - Softcover - 100 Pages",
     "sku": "NO-LU-004",
     "description": "High-quality notebook made with Softcover.",
-    "price": 9.16,
-    "originalPrice": 18.76,
+    "price": 40,
+    "originalPrice": 45,
     "quantityInStock": 51,
     "category": "Notebooks",
-    "brand": "Luxor",
+    "brand": "Classmate",
     "material": "Softcover",
     "images": [
       {
-        "url": "http://localhost:9000/assets/trial.png",
+        "url": "http://localhost:9000/assets/classmate100.png",
         "altText": "Notebook Image"
       }
     ],
@@ -83,15 +83,15 @@ const products = [
     "name": "Notebook - Cardboard - 50 Pages",
     "sku": "NO-FA-005",
     "description": "High-quality notebook made with Cardboard.",
-    "price": 11.47,
-    "originalPrice": 19.44,
+    "price": 65,
+    "originalPrice": 68,
     "quantityInStock": 159,
     "category": "Notebooks",
     "brand": "Faber-Castell",
     "material": "Cardboard",
     "images": [
       {
-        "url": "http://localhost:9000/assets/trial.png",
+        "url": "http://localhost:9000/assets/cardboard.png",
         "altText": "Notebook Image"
       }
     ],
@@ -100,18 +100,18 @@ const products = [
     "numReviews": 15
   },
   {
-    "name": "Permanent Marker - Plastic - 150 Pages",
+    "name": "Permanent Marker - Plastic ",
     "sku": "MA-FA-006",
     "description": "High-quality permanent marker made with Plastic.",
-    "price": 7.26,
-    "originalPrice": 13.27,
+    "price": 20,
+    "originalPrice": 25,
     "quantityInStock": 61,
     "category": "Markers",
     "brand": "Faber-Castell",
     "material": "Plastic",
     "images": [
       {
-        "url": "http://localhost:9000/assets/trial.png",
+        "url": "http://localhost:9000/assets/permanentmarker.png",
         "altText": "Permanent Marker Image"
       }
     ],
@@ -120,7 +120,7 @@ const products = [
     "numReviews": 52
   },
   {
-    "name": "Sticky Notes - Plastic - 50 Pages",
+    "name": "Sticky Notes - softcover - 50 Pages",
     "sku": "ST-CL-007",
     "description": "High-quality sticky notes made with Plastic.",
     "price": 25.27,
@@ -128,10 +128,10 @@ const products = [
     "quantityInStock": 87,
     "category": "Sticky Notes",
     "brand": "Classmate",
-    "material": "Plastic",
+    "material": "softcover",
     "images": [
       {
-        "url": "http://localhost:9000/assets/trial.png",
+        "url": "http://localhost:9000/assets/stickynote.png",
         "altText": "Sticky Notes Image"
       }
     ],
@@ -151,7 +151,7 @@ const products = [
     "material": "Hardcover",
     "images": [
       {
-        "url": "http://localhost:9000/assets/trial.png",
+        "url": "",
         "altText": "Permanent Marker Image"
       }
     ],
@@ -191,7 +191,7 @@ const products = [
     "material": "Plastic",
     "images": [
       {
-        "url": "http://localhost:9000/assets/trial.png",
+        "url": "http://localhost:9000/assets/trial1.png",
         "altText": "Permanent Marker Image"
       }
     ],
@@ -231,7 +231,7 @@ const products = [
     "material": "Cardboard",
     "images": [
       {
-        "url": "http://localhost:9000/assets/trial.png",
+        "url": "http://localhost:9000/assets/trial1.png",
         "altText": "Document Folder Image"
       }
     ],
@@ -271,7 +271,7 @@ const products = [
     "material": "Softcover",
     "images": [
       {
-        "url": "http://localhost:9000/assets/trial.png",
+        "url": "http://localhost:9000/assets/trial1.png",
         "altText": "Sticky Notes Image"
       }
     ],
@@ -311,7 +311,7 @@ const products = [
     "material": "Cardboard",
     "images": [
       {
-        "url": "http://localhost:9000/assets/trial.png",
+        "url": "http://localhost:9000/assets/trial1.png",
         "altText": "Ball Pen Image"
       }
     ],
@@ -371,7 +371,7 @@ const products = [
     "material": "Plastic",
     "images": [
       {
-        "url": "http://localhost:9000/assets/trial.png",
+        "url": "http://localhost:9000/assets/trial1.png",
         "altText": "Notebook Image"
       }
     ],
@@ -431,7 +431,7 @@ const products = [
     "material": "Hardcover",
     "images": [
       {
-        "url": "http://localhost:9000/assets/trial.png",
+        "url": "http://localhost:9000/assets/trial1.png",
         "altText": "Sticky Notes Image"
       }
     ],
@@ -471,7 +471,7 @@ const products = [
     "material": "Plastic",
     "images": [
       {
-        "url": "http://localhost:9000/assets/trial.png",
+        "url": "http://localhost:9000/assets/trial1.png",
         "altText": "Ball Pen Image"
       }
     ],
@@ -511,7 +511,7 @@ const products = [
     "material": "Plastic",
     "images": [
       {
-        "url": "http://localhost:9000/assets/trial.png",
+        "url": "http://localhost:9000/assets/trial1.png",
         "altText": "Ball Pen Image"
       }
     ],
@@ -571,7 +571,7 @@ const products = [
     "material": "Hardcover",
     "images": [
       {
-        "url": "http://localhost:9000/assets/trial.png",
+        "url": "http://localhost:9000/assets/trial1.png",
         "altText": "Document Folder Image"
       }
     ],
@@ -671,7 +671,7 @@ const products = [
     "material": "Hardcover",
     "images": [
       {
-        "url": "http://localhost:9000/assets/trial.png",
+        "url": "http://localhost:9000/assets/trial1.png",
         "altText": "Sticky Notes Image"
       }
     ],
@@ -711,7 +711,7 @@ const products = [
     "material": "Softcover",
     "images": [
       {
-        "url": "http://localhost:9000/assets/trial.png",
+        "url": "http://localhost:9000/assets/trial1.png",
         "altText": "Sticky Notes Image"
       }
     ],
@@ -771,7 +771,7 @@ const products = [
     "material": "Plastic",
     "images": [
       {
-        "url": "http://localhost:9000/assets/trial.png",
+        "url": "http://localhost:9000/assets/trial1.png",
         "altText": "Ball Pen Image"
       }
     ],
