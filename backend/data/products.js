@@ -3,8 +3,8 @@ const products = [
   {
     "name": "Notebooks - Unruled 50 Pages",
     "description": "High-quality notebooks with unruled pattern and 50 pages. Perfect for everyday use.",
-    "price": 16.32,
-    "originalPrice": 21.19,
+    "price": "\u20b916.32",
+    "originalPrice": "\u20b921.19",
     "quantityInStock": 185,
     "sku": "NO-UN-000",
     "category": "Notebooks",
@@ -18,7 +18,7 @@ const products = [
     "material": "Plastic",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=100",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Notebooks Image"
       }
     ],
@@ -43,13 +43,14 @@ const products = [
       "height": 1.1
     },
     "rating": 3.4,
-    "numReviews": 33
+    "numReviews": 33,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Sticky Notes - Unruled 150 Pages",
     "description": "High-quality sticky notes with unruled pattern and 150 pages. Perfect for everyday use.",
-    "price": 7.38,
-    "originalPrice": 10.66,
+    "price": "\u20b97.38",
+    "originalPrice": "\u20b910.66",
     "quantityInStock": 191,
     "sku": "ST-UN-001",
     "category": "Sticky Notes",
@@ -63,7 +64,7 @@ const products = [
     "material": "Hardcover",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=101",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Sticky Notes Image"
       }
     ],
@@ -88,13 +89,14 @@ const products = [
       "height": 1.8
     },
     "rating": 4.2,
-    "numReviews": 30
+    "numReviews": 30,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Notebooks - Grid 200 Pages",
     "description": "High-quality notebooks with grid pattern and 200 pages. Perfect for everyday use.",
-    "price": 18.52,
-    "originalPrice": 23.7,
+    "price": "\u20b918.52",
+    "originalPrice": "\u20b923.7",
     "quantityInStock": 189,
     "sku": "NO-GR-002",
     "category": "Notebooks",
@@ -108,7 +110,7 @@ const products = [
     "material": "Paper",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=102",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Notebooks Image"
       }
     ],
@@ -133,13 +135,14 @@ const products = [
       "height": 1.3
     },
     "rating": 5.0,
-    "numReviews": 38
+    "numReviews": 38,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Notebooks - Grid 150 Pages",
     "description": "High-quality notebooks with grid pattern and 150 pages. Perfect for everyday use.",
-    "price": 19.5,
-    "originalPrice": 24.02,
+    "price": "\u20b919.5",
+    "originalPrice": "\u20b924.02",
     "quantityInStock": 149,
     "sku": "NO-GR-003",
     "category": "Notebooks",
@@ -153,7 +156,7 @@ const products = [
     "material": "Softcover",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=103",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Notebooks Image"
       }
     ],
@@ -178,13 +181,14 @@ const products = [
       "height": 1.1
     },
     "rating": 4.0,
-    "numReviews": 19
+    "numReviews": 19,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Highlighters - Dotted 100 Pages",
     "description": "High-quality highlighters with dotted pattern and 100 pages. Perfect for everyday use.",
-    "price": 19.6,
-    "originalPrice": 24.16,
+    "price": "\u20b919.6",
+    "originalPrice": "\u20b924.16",
     "quantityInStock": 115,
     "sku": "HI-DO-004",
     "category": "Highlighters",
@@ -198,7 +202,7 @@ const products = [
     "material": "Softcover",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=104",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Highlighters Image"
       }
     ],
@@ -223,13 +227,14 @@ const products = [
       "height": 1.5
     },
     "rating": 4.9,
-    "numReviews": 1
+    "numReviews": 1,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Markers - Ruled 80 Pages",
     "description": "High-quality markers with ruled pattern and 80 pages. Perfect for everyday use.",
-    "price": 16.28,
-    "originalPrice": 22.04,
+    "price": "\u20b916.28",
+    "originalPrice": "\u20b922.04",
     "quantityInStock": 161,
     "sku": "MA-RU-005",
     "category": "Markers",
@@ -243,7 +248,7 @@ const products = [
     "material": "Cardboard",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=105",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Markers Image"
       }
     ],
@@ -268,13 +273,14 @@ const products = [
       "height": 1.5
     },
     "rating": 3.8,
-    "numReviews": 45
+    "numReviews": 45,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Markers - Ruled 200 Pages",
     "description": "High-quality markers with ruled pattern and 200 pages. Perfect for everyday use.",
-    "price": 14.7,
-    "originalPrice": 20.69,
+    "price": "\u20b914.7",
+    "originalPrice": "\u20b920.69",
     "quantityInStock": 191,
     "sku": "MA-RU-006",
     "category": "Markers",
@@ -288,7 +294,7 @@ const products = [
     "material": "Paper",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=106",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Markers Image"
       }
     ],
@@ -313,13 +319,14 @@ const products = [
       "height": 2.4
     },
     "rating": 4.9,
-    "numReviews": 19
+    "numReviews": 19,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Notebooks - Ruled 150 Pages",
     "description": "High-quality notebooks with ruled pattern and 150 pages. Perfect for everyday use.",
-    "price": 7.61,
-    "originalPrice": 12.22,
+    "price": "\u20b97.61",
+    "originalPrice": "\u20b912.22",
     "quantityInStock": 187,
     "sku": "NO-RU-007",
     "category": "Notebooks",
@@ -333,7 +340,7 @@ const products = [
     "material": "Hardcover",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=107",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Notebooks Image"
       }
     ],
@@ -358,13 +365,14 @@ const products = [
       "height": 1.3
     },
     "rating": 3.9,
-    "numReviews": 25
+    "numReviews": 25,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Markers - Grid 50 Pages",
     "description": "High-quality markers with grid pattern and 50 pages. Perfect for everyday use.",
-    "price": 11.6,
-    "originalPrice": 14.92,
+    "price": "\u20b911.6",
+    "originalPrice": "\u20b914.92",
     "quantityInStock": 153,
     "sku": "MA-GR-008",
     "category": "Markers",
@@ -378,7 +386,7 @@ const products = [
     "material": "Hardcover",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=108",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Markers Image"
       }
     ],
@@ -403,13 +411,14 @@ const products = [
       "height": 2.4
     },
     "rating": 3.7,
-    "numReviews": 7
+    "numReviews": 7,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Pens - Dotted 50 Pages",
     "description": "High-quality pens with dotted pattern and 50 pages. Perfect for everyday use.",
-    "price": 13.66,
-    "originalPrice": 16.61,
+    "price": "\u20b913.66",
+    "originalPrice": "\u20b916.61",
     "quantityInStock": 160,
     "sku": "PE-DO-009",
     "category": "Pens",
@@ -423,7 +432,7 @@ const products = [
     "material": "Plastic",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=109",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Pens Image"
       }
     ],
@@ -448,13 +457,14 @@ const products = [
       "height": 2.5
     },
     "rating": 4.9,
-    "numReviews": 2
+    "numReviews": 2,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Pens - Ruled 200 Pages",
     "description": "High-quality pens with ruled pattern and 200 pages. Perfect for everyday use.",
-    "price": 19.95,
-    "originalPrice": 23.64,
+    "price": "\u20b919.95",
+    "originalPrice": "\u20b923.64",
     "quantityInStock": 159,
     "sku": "PE-RU-010",
     "category": "Pens",
@@ -468,7 +478,7 @@ const products = [
     "material": "Softcover",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=110",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Pens Image"
       }
     ],
@@ -493,13 +503,14 @@ const products = [
       "height": 1.3
     },
     "rating": 4.5,
-    "numReviews": 49
+    "numReviews": 49,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Highlighters - Grid 80 Pages",
     "description": "High-quality highlighters with grid pattern and 80 pages. Perfect for everyday use.",
-    "price": 14.26,
-    "originalPrice": 16.34,
+    "price": "\u20b914.26",
+    "originalPrice": "\u20b916.34",
     "quantityInStock": 96,
     "sku": "HI-GR-011",
     "category": "Highlighters",
@@ -513,7 +524,7 @@ const products = [
     "material": "Paper",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=111",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Highlighters Image"
       }
     ],
@@ -538,13 +549,14 @@ const products = [
       "height": 2.8
     },
     "rating": 4.0,
-    "numReviews": 25
+    "numReviews": 25,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Markers - Dotted 150 Pages",
     "description": "High-quality markers with dotted pattern and 150 pages. Perfect for everyday use.",
-    "price": 15.75,
-    "originalPrice": 21.25,
+    "price": "\u20b915.75",
+    "originalPrice": "\u20b921.25",
     "quantityInStock": 123,
     "sku": "MA-DO-012",
     "category": "Markers",
@@ -558,7 +570,7 @@ const products = [
     "material": "Cardboard",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=112",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Markers Image"
       }
     ],
@@ -583,13 +595,14 @@ const products = [
       "height": 2.3
     },
     "rating": 3.6,
-    "numReviews": 8
+    "numReviews": 8,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Pens - Unruled 80 Pages",
     "description": "High-quality pens with unruled pattern and 80 pages. Perfect for everyday use.",
-    "price": 18.93,
-    "originalPrice": 24.7,
+    "price": "\u20b918.93",
+    "originalPrice": "\u20b924.7",
     "quantityInStock": 99,
     "sku": "PE-UN-013",
     "category": "Pens",
@@ -603,7 +616,7 @@ const products = [
     "material": "Plastic",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=113",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Pens Image"
       }
     ],
@@ -628,13 +641,14 @@ const products = [
       "height": 1.3
     },
     "rating": 4.0,
-    "numReviews": 47
+    "numReviews": 47,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Pens - Dotted 150 Pages",
     "description": "High-quality pens with dotted pattern and 150 pages. Perfect for everyday use.",
-    "price": 10.21,
-    "originalPrice": 13.02,
+    "price": "\u20b910.21",
+    "originalPrice": "\u20b913.02",
     "quantityInStock": 94,
     "sku": "PE-DO-014",
     "category": "Pens",
@@ -648,7 +662,7 @@ const products = [
     "material": "Softcover",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=114",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Pens Image"
       }
     ],
@@ -673,13 +687,14 @@ const products = [
       "height": 1.2
     },
     "rating": 3.5,
-    "numReviews": 46
+    "numReviews": 46,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Markers - Dotted 100 Pages",
     "description": "High-quality markers with dotted pattern and 100 pages. Perfect for everyday use.",
-    "price": 18.8,
-    "originalPrice": 24.74,
+    "price": "\u20b918.8",
+    "originalPrice": "\u20b924.74",
     "quantityInStock": 35,
     "sku": "MA-DO-015",
     "category": "Markers",
@@ -693,7 +708,7 @@ const products = [
     "material": "Hardcover",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=115",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Markers Image"
       }
     ],
@@ -718,13 +733,14 @@ const products = [
       "height": 2.2
     },
     "rating": 3.4,
-    "numReviews": 7
+    "numReviews": 7,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Sticky Notes - Unruled 200 Pages",
     "description": "High-quality sticky notes with unruled pattern and 200 pages. Perfect for everyday use.",
-    "price": 11.59,
-    "originalPrice": 17.37,
+    "price": "\u20b911.59",
+    "originalPrice": "\u20b917.37",
     "quantityInStock": 10,
     "sku": "ST-UN-016",
     "category": "Sticky Notes",
@@ -738,7 +754,7 @@ const products = [
     "material": "Cardboard",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=116",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Sticky Notes Image"
       }
     ],
@@ -763,13 +779,14 @@ const products = [
       "height": 1.3
     },
     "rating": 3.9,
-    "numReviews": 28
+    "numReviews": 28,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Markers - Ruled 80 Pages",
     "description": "High-quality markers with ruled pattern and 80 pages. Perfect for everyday use.",
-    "price": 5.4,
-    "originalPrice": 10.17,
+    "price": "\u20b95.4",
+    "originalPrice": "\u20b910.17",
     "quantityInStock": 57,
     "sku": "MA-RU-017",
     "category": "Markers",
@@ -783,7 +800,7 @@ const products = [
     "material": "Plastic",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=117",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Markers Image"
       }
     ],
@@ -808,13 +825,14 @@ const products = [
       "height": 2.1
     },
     "rating": 4.4,
-    "numReviews": 24
+    "numReviews": 24,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Markers - Dotted 100 Pages",
     "description": "High-quality markers with dotted pattern and 100 pages. Perfect for everyday use.",
-    "price": 5.42,
-    "originalPrice": 8.82,
+    "price": "\u20b95.42",
+    "originalPrice": "\u20b98.82",
     "quantityInStock": 105,
     "sku": "MA-DO-018",
     "category": "Markers",
@@ -828,7 +846,7 @@ const products = [
     "material": "Hardcover",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=118",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Markers Image"
       }
     ],
@@ -853,13 +871,14 @@ const products = [
       "height": 2.0
     },
     "rating": 3.9,
-    "numReviews": 11
+    "numReviews": 11,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Pens - Dotted 200 Pages",
     "description": "High-quality pens with dotted pattern and 200 pages. Perfect for everyday use.",
-    "price": 12.71,
-    "originalPrice": 15.86,
+    "price": "\u20b912.71",
+    "originalPrice": "\u20b915.86",
     "quantityInStock": 174,
     "sku": "PE-DO-019",
     "category": "Pens",
@@ -873,7 +892,7 @@ const products = [
     "material": "Paper",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=119",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Pens Image"
       }
     ],
@@ -898,13 +917,14 @@ const products = [
       "height": 2.1
     },
     "rating": 3.4,
-    "numReviews": 16
+    "numReviews": 16,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Highlighters - Unruled 200 Pages",
     "description": "High-quality highlighters with unruled pattern and 200 pages. Perfect for everyday use.",
-    "price": 14.96,
-    "originalPrice": 18.48,
+    "price": "\u20b914.96",
+    "originalPrice": "\u20b918.48",
     "quantityInStock": 150,
     "sku": "HI-UN-020",
     "category": "Highlighters",
@@ -918,7 +938,7 @@ const products = [
     "material": "Plastic",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=120",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Highlighters Image"
       }
     ],
@@ -943,13 +963,14 @@ const products = [
       "height": 2.0
     },
     "rating": 3.9,
-    "numReviews": 22
+    "numReviews": 22,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Sticky Notes - Grid 200 Pages",
     "description": "High-quality sticky notes with grid pattern and 200 pages. Perfect for everyday use.",
-    "price": 5.93,
-    "originalPrice": 7.97,
+    "price": "\u20b95.93",
+    "originalPrice": "\u20b97.97",
     "quantityInStock": 144,
     "sku": "ST-GR-021",
     "category": "Sticky Notes",
@@ -963,7 +984,7 @@ const products = [
     "material": "Cardboard",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=121",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Sticky Notes Image"
       }
     ],
@@ -988,13 +1009,14 @@ const products = [
       "height": 2.5
     },
     "rating": 4.0,
-    "numReviews": 20
+    "numReviews": 20,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Sticky Notes - Ruled 100 Pages",
     "description": "High-quality sticky notes with ruled pattern and 100 pages. Perfect for everyday use.",
-    "price": 11.86,
-    "originalPrice": 15.79,
+    "price": "\u20b911.86",
+    "originalPrice": "\u20b915.79",
     "quantityInStock": 148,
     "sku": "ST-RU-022",
     "category": "Sticky Notes",
@@ -1008,7 +1030,7 @@ const products = [
     "material": "Softcover",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=122",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Sticky Notes Image"
       }
     ],
@@ -1033,13 +1055,14 @@ const products = [
       "height": 2.8
     },
     "rating": 4.8,
-    "numReviews": 20
+    "numReviews": 20,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Highlighters - Ruled 200 Pages",
     "description": "High-quality highlighters with ruled pattern and 200 pages. Perfect for everyday use.",
-    "price": 10.73,
-    "originalPrice": 16.1,
+    "price": "\u20b910.73",
+    "originalPrice": "\u20b916.1",
     "quantityInStock": 162,
     "sku": "HI-RU-023",
     "category": "Highlighters",
@@ -1053,7 +1076,7 @@ const products = [
     "material": "Plastic",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=123",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Highlighters Image"
       }
     ],
@@ -1078,13 +1101,14 @@ const products = [
       "height": 1.3
     },
     "rating": 4.2,
-    "numReviews": 37
+    "numReviews": 37,
+    "imageUrl": "C:\rabbit\frontend\src\assets\featured.png"
   },
   {
     "name": "Sticky Notes - Unruled 150 Pages",
     "description": "High-quality sticky notes with unruled pattern and 150 pages. Perfect for everyday use.",
-    "price": 8.03,
-    "originalPrice": 11.6,
+    "price": "\u20b98.03",
+    "originalPrice": "\u20b911.6",
     "quantityInStock": 125,
     "sku": "ST-UN-024",
     "category": "Sticky Notes",
@@ -1098,7 +1122,7 @@ const products = [
     "material": "Softcover",
     "images": [
       {
-        "url": "https://picsum.photos/500/500?random=124",
+        "url": "C:\rabbit\frontend\src\assets\featured.png",
         "altText": "Sticky Notes Image"
       }
     ],
@@ -1107,7 +1131,7 @@ const products = [
     "tags": [
       "office",
       "writing",
-      "notes",
+      "notes"
     ],
     "metaTitle": "Sticky Notes - Unruled by PaperMate",
     "metaDescription": "Shop high-quality sticky notes with unruled pattern by PaperMate.",
@@ -1123,8 +1147,8 @@ const products = [
       "height": 1.7
     },
     "rating": 4.4,
-    "numReviews": 48
+    "numReviews": 48,
+    "imageUrl": ""
   }
-];
-
-export default products;
+]
+module.exports = products; 

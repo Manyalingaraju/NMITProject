@@ -22,50 +22,64 @@ export const fetchAdminProducts = createAsyncThunk(
   }
 );
 
-// Async function to create a new product
+// Async thunk to create a new product
 export const createProduct = createAsyncThunk(
   "adminProducts/createProduct",
-  async (productData) => {
-    const response = await axios.post(
-      `${API_URL}/api/admin/products`,
-      productData,
-      {
+  async (productData, { rejectWithValue }) => {
+    try {
+      const response = await axios.post(
+        `${API_URL}/api/admin/products`,
+        productData,
+        {
+          headers: {
+            Authorization: USER_TOKEN,
+          },
+        }
+      );
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response?.data || { message: error.message });
+    }
+  }
+);
+
+// Async thunk to update a product
+export const updateProduct = createAsyncThunk(
+  "adminProducts/updateProduct",
+  async ({ id, productData }, { rejectWithValue }) => {
+    try {
+      const response = await axios.put(
+        `${API_URL}/api/admin/products/${id}`,
+        productData,
+        {
+          headers: {
+            Authorization: USER_TOKEN,
+          },
+        }
+      );
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response?.data || { message: error.message });
+    }
+  }
+);
+
+// Async thunk to delete a product
+export const deleteProduct = createAsyncThunk(
+  "adminProducts/deleteProduct",
+  async (id, { rejectWithValue }) => {
+    try {
+      await axios.delete(`${API_URL}/api/admin/products/${id}`, {
         headers: {
           Authorization: USER_TOKEN,
         },
-      }
-    );
-    return response.data;
-  }
-);
-//async thunk to update an existing product
-export const updateProduct =createAsyncThunk(
-    "adminProducts/updateProduct",
-    async({id,productData})=>{
-        const response=await axios.put(`${API_URL}/api/admin/products/${id}`,
-            productData,{
-                headers:{
-                    Authorization:USER_TOKEN,
-                },
-            }
-        );
-        return response.data;
+      });
+      return id;
+    } catch (error) {
+      return rejectWithValue(error.response?.data || { message: error.message });
     }
-)
-//async thunk to delete an existing product
-// async thunk to delete a product
-export const deleteProduct = createAsyncThunk(
-  "adminProducts/deleteProduct",
-  async (id) => {
-    await axios.delete(`${API_URL}/api/admin/products/${id}`, {
-      headers: {
-        Authorization: USER_TOKEN,
-      },
-    });
-    return id;
   }
 );
- 
 
 // Slice
 const adminProductSlice = createSlice({
@@ -78,6 +92,7 @@ const adminProductSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
+      // Fetch Products
       .addCase(fetchAdminProducts.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -90,22 +105,7 @@ const adminProductSlice = createSlice({
         state.loading = false;
         state.error = action.payload?.message || "Failed to fetch products";
       })
-      //Create Product
-      .addCase(fetchAdminProducts.fulfilled, (state, action) => {
-        state.products.push(action.payload);
-      })
-      //update product
-      .addCase(fetchAdminProducts.fulfilled, (state, action) => {
-        
-      })
-      const adminProductSlice = createSlice({
-  name: 'adminProducts',
-  initialState: {
-    products: [],
-  },
-  reducers: {},
-  extraReducers: (builder) => {
-    builder
+
       // Create Product
       .addCase(createProduct.fulfilled, (state, action) => {
         state.products.push(action.payload);
@@ -127,9 +127,6 @@ const adminProductSlice = createSlice({
           (product) => product._id !== action.payload
         );
       });
-  },
-});
-
   },
 });
 

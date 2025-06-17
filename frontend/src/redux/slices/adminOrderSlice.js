@@ -10,7 +10,7 @@ export const fetchAllOrders = createAsyncThunk(
         `${import.meta.env.VITE_BACKEND_URL}/api/admin/orders`,
         {
           headers: {
-            Authorization: 'Bearer ${localStorage.getItem("userToken")}',
+            Authorization: `Bearer ${localStorage.getItem("userToken")}`,
           },
         }
       );
@@ -23,14 +23,15 @@ export const fetchAllOrders = createAsyncThunk(
 
 // update order delivery status
 export const updateOrderStatus = createAsyncThunk(
-  "adminOrders/fetchAllOrders",
-  async ({id,status}, { rejectWithValue }) => {
+  "adminOrders/updateOrderStatus", // 🔁 FIXED: unique action type
+  async ({ id, status }, { rejectWithValue }) => {
     try {
       const response = await axios.put(
-        `${import.meta.env.VITE_BACKEND_URL}/api/admin/orders/${id}`,{status},
+        `${import.meta.env.VITE_BACKEND_URL}/api/admin/orders/${id}`,
+        { status },
         {
           headers: {
-            Authorization: 'Bearer ${localStorage.getItem("userToken")}',
+            Authorization: `Bearer ${localStorage.getItem("userToken")}`,
           },
         }
       );
@@ -41,17 +42,16 @@ export const updateOrderStatus = createAsyncThunk(
   }
 );
 
-
-//  delete order delivery status
-export const deleteOrderStatus = createAsyncThunk(
-  "adminOrders/fetchAllOrders",
+// delete order
+export const deleteOrder = createAsyncThunk(
+  "adminOrders/deleteOrder", // 🔁 FIXED: unique action type
   async (id, { rejectWithValue }) => {
     try {
       await axios.delete(
         `${import.meta.env.VITE_BACKEND_URL}/api/admin/orders/${id}`,
         {
           headers: {
-            Authorization: 'Bearer ${localStorage.getItem("userToken")}',
+            Authorization: `Bearer ${localStorage.getItem("userToken")}`,
           },
         }
       );
@@ -61,6 +61,7 @@ export const deleteOrderStatus = createAsyncThunk(
     }
   }
 );
+
 const adminOrderSlice = createSlice({
   name: "adminOrders",
   initialState: {
@@ -84,11 +85,11 @@ const adminOrderSlice = createSlice({
         state.loading = false;
         state.orders = action.payload;
         state.totalOrders = action.payload.length;
-        //calculate total sales
-        state.totalSales = action.payload.reduce((acc,order)=>{
-            return acc+order.totalPrice;
-        },0);
-        state.totalSales=totalSales;
+        // calculate total sales
+        state.totalSales = action.payload.reduce((acc, order) => {
+          return acc + order.totalPrice;
+        }, 0);
+        // ❌ Removed invalid: state.totalSales = totalSales;
       })
 
       // Fetch all orders - rejected
@@ -96,9 +97,10 @@ const adminOrderSlice = createSlice({
         state.loading = false;
         state.error = action.payload.message;
       })
-    //update order status
-    .addCase(updateOrderStatus.fulfilled,(state,action)=>{
-        const updatedOrder =action.payload;
+
+      // update order status
+      .addCase(updateOrderStatus.fulfilled, (state, action) => {
+        const updatedOrder = action.payload;
         const orderIndex = state.orders.findIndex(
           (order) => order._id === updatedOrder._id
         );
@@ -116,5 +118,5 @@ const adminOrderSlice = createSlice({
       });
   },
 });
-    
+
 export default adminOrderSlice.reducer;

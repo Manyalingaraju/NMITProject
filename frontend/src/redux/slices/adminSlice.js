@@ -115,6 +115,7 @@ const adminSlice = createSlice({
       })
       .addCase(addUser.fulfilled, (state, action) => {
         state.loading = false;
+        // Assuming backend returns the new user directly
         state.users.push(action.payload);
       })
       .addCase(addUser.rejected, (state, action) => {
@@ -122,6 +123,7 @@ const adminSlice = createSlice({
         state.error = action.payload?.message || "Failed to add user";
       })
 
+      // Update user
       .addCase(updateUser.fulfilled, (state, action) => {
         state.loading = false;
         const updatedUser = action.payload;
@@ -132,21 +134,11 @@ const adminSlice = createSlice({
           state.users[userIndex] = updatedUser;
         }
       })
+
+      // Delete user
       .addCase(deleteUser.fulfilled, (state, action) => {
         state.loading = false;
         state.users = state.users.filter(user => user._id !== action.payload);
-      })
-      .addCase(addUser.pending,(state)=>{
-        state.loading=true;
-        state.error=null;
-      })
-      .addCase(addUser.fulfilled,(state,action)=>{
-        state.loading=false;
-        state.users.push(action.payload.user);
-      })
-      .addCase(addUser.rejected,(state,action)=>{
-        state.loading=false;
-        state.error=action.payload.message;
       });
   },
 });

@@ -1,46 +1,55 @@
-const mongoose=require("mongoose");
+const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const Product = require("./models/Product");
 const User = require("./models/user");
-const cart = require("./models/Cart");
-const product=require("./data/products");
 const Cart = require("./models/Cart");
+const product = require("./data/products");
 
 dotenv.config();
 
-// connect to the mongodb
+// connect to MongoDB
 mongoose.connect(process.env.MONGO_URI);
 
-//function to seed data 
-const seedData = async () =>{
-    try {
+// function to seed data 
+const seedData = async () => {
+  try {
+    await Product.deleteMany();
+    await User.deleteMany();
+    await Cart.deleteMany();
 
-        await Product.deleteMany();
-        await User.deleteMany();
-        await Cart.deleteMany();
-        // create a default admin user 
-        const createdUser = await User.create({
-            name: "Admin User",
-            email: "admin@example.com",
-            password: "123456", // ensure you hash passwords if required by your schema
-            isAdmin: true,
-        });
-        // Assign the default user ID to each product 
-        const userID = createdUser._id;
-        const sampleProducts = product.map((product)=> {
-            return{...product,user: userID}
-        });
-        //Insert the products into the database 
-        await Product.insertMany(sampleProducts);
+    // Create a default admin user 
+    const createdUser = await User.create({
+      name: "Admin User",
+      email: "admin@example.com",
+      password: "123456", // You may want to hash this in real usage
+      isAdmin: true,
+    });
 
-        console.log("Product data seeded successfully");
-        process.exit();
-           
-    } catch (error) {
-        console.error("Error seeding the data :",error);
-        process.exit(1);
-        
-        
-    }
+    const userID = createdUser._id;
+
+    // Assign the default user ID and clean ₹ from price strings
+    const sampleProducts = product.map((p) => {
+      const cleanPrice = typeof p.price === "string" ? parseFloat(p.price.replace("₹", "")) : p.price;
+      const cleanOriginalPrice = typeof p.originalPrice === "string" ? parseFloat(p.originalPrice.replace("₹", "")) : p.originalPrice;
+
+      return {
+        ...p,
+        price: cleanPrice,
+        originalPrice: cleanOriginalPrice,
+        user: userID,
+      };
+    });
+
+    // Insert the products into the database 
+    await Product.insertMany(sampleProducts);
+
+    console.log("Product data seeded successfully");
+    process.exit();
+
+  } catch (error) {
+    console.error("Error seeding the data:", error);
+    process.exit(1);
+  }
 };
+
 seedData();

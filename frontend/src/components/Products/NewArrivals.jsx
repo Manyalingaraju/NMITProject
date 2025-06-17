@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
@@ -9,105 +10,20 @@ const NewArrivals = () => {
     const [CanScrollLeft, setCanScrollLeft] = useState(false);
     const[canScrollRight,setCanScrollRight]=useState(true);
 
-    const NewArrivals = [
-        {
-            _id: "1",
-            name: "Stationery Collection",
-            price: 50,
-            images:[
-                {
-                    url:"https://picsum.photos/500/500?random=1",
-                    altText:"Stationery Collection "
-                }
-            ]
-            
-        },
-        {
-            _id: "2",
-            name: "Stationery Collection",
-            price: 50,
-            images:[
-                {
-                    url:"https://picsum.photos/500/500?random=2",
-                    altText:"Stationery Collection "
-                }
-            ]
-            
-        },
-        {
-            _id: "3",
-            name: "Stationery Collection",
-            price: 50,
-            images:[
-                {
-                    url:"https://picsum.photos/500/500?random=3",
-                    altText:"Stationery Collection "
-                }
-            ]
-            
-        },
-        {
-            _id: "4",
-            name: "Stationery Collection",
-            price: 50,
-            images:[
-                {
-                    url:"https://picsum.photos/500/500?random=4",
-                    altText:"Stationery Collection "
-                }
-            ]
-            
-        },
-        {
-            _id: "5",
-            name: "Stationery Collection",
-            price: 50,
-            images:[
-                {
-                    url:"https://picsum.photos/500/500?random=5",
-                    altText:"Stationery Collection "
-                }
-            ]
-            
-        },
-        {
-            _id: "6",
-            name: "Stationery Collection",
-            price: 50,
-            images:[
-                {
-                    url:"https://picsum.photos/500/500?random=6",
-                    altText:"Stationery Collection "
-                }
-            ]
-            
-        },
-        {
-            _id: "7",
-            name: "Stationery Collection",
-            price: 50,
-            images:[
-                {
-                    url:"https://picsum.photos/500/500?random=7",
-                    altText:"Stationery Collection "
-                }
-            ]
-            
-        },
-        {
-            _id: "8",
-            name: "Stationery Collection",
-            price: 50,
-            images:[
-                {
-                    url:"https://picsum.photos/500/500?random=8",
-                    altText:"Stationery Collection "
-                }
-            ]
-            
-        },
-        
-    ];
+    const [NewArrivals,setNewArrivals]=useState([]);
+    useEffect(()=>{
+        const fetchNewArrivals = async()=>{
+            try {
+                const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/products/new-arrivals`);
+                setNewArrivals(response.data)
+            } catch (error) {
+                console.error(error);
+                
+                
+            }
+        }
+        fetchNewArrivals();
+    },[]);
 
     const handleMouseDown = (e) => {
         setIsDragging(true);
@@ -153,7 +69,7 @@ const NewArrivals = () => {
             updateScrollButtons();
             return ()=>container.removeEventListener("scroll", updateScrollButtons);
         }
-    },[]);
+    },[NewArrivals]);
 
     return (
         <section className="py-16 px-4 lg:px-0">
